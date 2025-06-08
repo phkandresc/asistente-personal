@@ -1,9 +1,23 @@
 [
     {
-        "nombre": "ali",
-        "apellido": "mormenica",
+        "nombre": "Ali",
+        "apellido": "Mormenica",
         "username": "ali",
         "email": "ali@ali.com",
         "password": "94419b99b12c11133a4dfeccc3e17885974beb48f7827c48239aabfbcad238d8"
+    },
+    {
+        "nombre": "Kevin",
+        "apellido": "Coraizaca",
+        "username": "phkandres",
+        "email": "kacoraizaca@gmail.com",
+        "password": "9b2ac3ea1561538b6084573c9d57fe396034cce3a26e0b75a318b618afce26fb"
+    },
+    {
+        "nombre": "Juan",
+        "apellido": "Juan",
+        "username": "juan",
+        "email": "juan@juan.com",
+        "password": "ed08c290d7e22f7bb324b15cbadce35b0b348564fd2d5f95752388d86d71bcca"
     }
 ]

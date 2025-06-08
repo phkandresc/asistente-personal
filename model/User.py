@@ -4,8 +4,8 @@ from utils.Seguridad import hash_password
 class User:
     def __init__(self, nombre, apellido, username, email, password, hashed=False):
         # Inicializa los atributos del usuario
-        self.nombre = nombre
-        self.apellido = apellido
+        self.nombre = nombre.title()  # Capitaliza el nombre
+        self.apellido = apellido.title()  # Capitaliza el apellido
         self.username = username
         self.email = email
         # Si la contraseña no está hasheada, la hashea

@@ -15,10 +15,6 @@ class LoginController:
         # Interfaz gráfica de login
         self.ui = Ui_Login()
         self.ui.setupUi(self.vista)
-        # Repositorio para gestionar usuarios
-        self.repositorio = UserRepository()
-        print("Usuarios cargados desde el repositorio en LoginController:", len(self.repositorio.usuarios))  # Depuración
-        print(self.repositorio.usuarios[0])
         # Conecta los eventos de la interfaz con sus métodos
         self.conectar_eventos()
 
@@ -44,6 +40,9 @@ class LoginController:
             self.ui.txtPassword.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
 
     def iniciar_sesion(self):
+        # Crea una instancia del repositorio de usuarios
+        repositorio = UserRepository()
+
         # Obtiene los datos ingresados por el usuario
         username = self.ui.txtNombreUsuario.text().strip()
         password = self.ui.txtPassword.text().strip()
@@ -53,8 +52,8 @@ class LoginController:
             QMessageBox.warning(self.vista, "Campos Vacíos", "Por favor, complete todos los campos.")
             return
 
-        # Valida las credenciales con el repositorio
-        usuario = self.repositorio.validar_credenciales(username, password)
+        # Válida las credenciales con el repositorio
+        usuario = repositorio.validar_credenciales(username, password)
         if usuario:
             # Muestra mensaje de bienvenida si las credenciales son correctas
             QMessageBox.information(self.vista, "Bienvenido", f"Hola {usuario.nombre} {usuario.apellido}!")
