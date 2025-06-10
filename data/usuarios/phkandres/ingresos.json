@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "monto": 1000.0,
+        "fecha": "2023-10-01",
+        "categoria": {
+            "id": 1,
+            "nombre": "Salario"
+        },
+        "descripcion": "Pago de servicios",
+        "tipo": "ingreso"
+    },
+    {
+        "id": 2,
+        "monto": 1000.0,
+        "fecha": "2023-10-01",
+        "categoria": {
+            "id": 1,
+            "nombre": "Salario"
+        },
+        "descripcion": "Pago de servicios",
+        "tipo": "ingreso"
+    },
+    {
+        "id": 3,
+        "monto": 1000.0,
+        "fecha": "2023-10-01",
+        "categoria": {
+            "id": 1,
+            "nombre": "Salario"
+        },
+        "descripcion": "Pago de servicios",
+        "tipo": "ingreso"
+    }
+]
