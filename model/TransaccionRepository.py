@@ -1,7 +1,6 @@
 import json
 import os
 
-from model.CategoriaRepository import CategoriaRepository
 from model.Transaccion import Ingreso, Egreso  # Ajusta según tu estructura real
 
 class TransaccionRepository:
