@@ -19,22 +19,9 @@
 	padding: 5px;
 }
 
-#search_btn{
-	border: none;
-	padding: 5px;
-}
-
-/*= Style for mainwindow START
-  ==================================================== */
-	#MainWindow {
-		background-color: #fff;
-	}
-/*= END
-  ==================================================== */
-
 /*= Style for button to change menu style START
   ==================================================== */
-	#change_btn {
+	#btnCambioMenu {
 		padding: 5px;
 		border: none;
 		width: 30px;
@@ -43,36 +30,28 @@
 /*= END
   ==================================================== */
 
-/*= Style for header widget START
-  ==================================================== */
-	#widget {
-		background-color: #f9fafd;
-	}
-/*= END
-  ==================================================== */
-
 /*= Style for menu with icon only START
   ==================================================== */
   	/* style for widget */
-	#icon_only_widget {
-		background-color: #313a46;
+	#widgetMenuIconos {
+		background-color: rgb(242, 242, 242);
 		width:50px;
 	}
 
     /* style for QPushButton and QLabel */
-	#icon_only_widget QPushButton, QLabel {
+	#widgetMenuIconos QPushButton, QLabel {
 		height:50px;
 		border:none;
 		/* border-bottom: 1px solid #b0b0b0; */
 	}
 
-	#icon_only_widget QPushButton:hover {
+	#widgetMenuIconos QPushButton:hover {
 		background-color: rgba( 86, 101, 115, 0.5);
 	}
 
 	/* style for logo image */
-	#logo_label_1 {
-		padding: 5px
+	#lblMenuIcono {
+		padding: 5px;
 	}
 /*= END
   ==================================================== */
@@ -80,31 +59,31 @@
 /*= Style for menu with icon and text START
   ==================================================== */
 	/* style for widget */
-	#full_menu_widget {
-		background-color: #313a46;
+	#widgetMenu {
+		background-color: rgb(242, 242, 242);
 	}
 
 	/* style for QPushButton */
-	#full_menu_widget QPushButton {
+	#widgetMenu QPushButton {
+		height: 25px;
 		border:none;
 		border-radius: 3px;
 		text-align: left;
-		padding: 8px 0 8px 15px;
+		padding: 10px 0 10px 18px;
 		color: #788596;
 	}
 
-	#full_menu_widget QPushButton:hover {
+	#widgetMenu QPushButton:hover {
 		background-color: rgba( 86, 101, 115, 0.5);
 	}
 
-	#full_menu_widget QPushButton:checked {
-		color: #fff;
+	#widgetMenu QPushButton:checked {
+		background-color: rgb(220, 138, 221);
 	}
 
 #paginaResumen #widgetBalance, #widgetIngresos, #widgetEgresos{
 	background-color: rgb(28, 113, 216);
 }
-
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -125,7 +104,7 @@
      <number>0</number>
     </property>
     <item row="0" column="2">
-     <widget class="QWidget" name="mainWidget" native="true">
+     <widget class="QWidget" name="widgetPrincipal" native="true">
       <layout class="QVBoxLayout" name="verticalLayout_5">
        <property name="spacing">
         <number>0</number>
@@ -167,7 +146,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QPushButton" name="change_btn">
+           <widget class="QPushButton" name="btnCambioMenu">
             <property name="text">
              <string/>
             </property>
@@ -205,6 +184,23 @@
              <number>10</number>
             </property>
            </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblUsername">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+              <bold>false</bold>
+              <kerning>true</kerning>
+             </font>
+            </property>
+            <property name="text">
+             <string>Bienvenido, Username</string>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+           </widget>
           </item>
           <item>
            <spacer name="horizontalSpacer_2">
@@ -526,6 +522,52 @@
             </item>
            </layout>
           </widget>
+          <widget class="QLabel" name="lblBalanceGeneral_3">
+           <property name="geometry">
+            <rect>
+             <x>560</x>
+             <y>120</y>
+             <width>279</width>
+             <height>23</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+             <bold>true</bold>
+             <kerning>true</kerning>
+            </font>
+           </property>
+           <property name="text">
+            <string>Presupuesto Mensual</string>
+           </property>
+           <property name="margin">
+            <number>0</number>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lblBalanceGeneral_4">
+           <property name="geometry">
+            <rect>
+             <x>530</x>
+             <y>360</y>
+             <width>279</width>
+             <height>23</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+             <bold>true</bold>
+             <kerning>true</kerning>
+            </font>
+           </property>
+           <property name="text">
+            <string>Presupuesto Semanal</string>
+           </property>
+           <property name="margin">
+            <number>0</number>
+           </property>
+          </widget>
          </widget>
          <widget class="QWidget" name="page_2">
           <layout class="QGridLayout" name="gridLayout_3">
@@ -647,12 +689,12 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QWidget" name="full_menu_widget" native="true">
+     <widget class="QWidget" name="widgetMenu" native="true">
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <property name="spacing">
-          <number>0</number>
+          <number>10</number>
          </property>
          <item>
           <widget class="QLabel" name="logo_label_2">
@@ -672,7 +714,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="resource.qrc">:/icon/icon/Logo.png</pixmap>
+            <pixmap resource="resource.qrc">:/icon/icon/balance.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -680,7 +722,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="logo_label_3">
+          <widget class="QLabel" name="lblLogoMenuGrande">
            <property name="font">
             <font>
              <pointsize>15</pointsize>
@@ -834,7 +876,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="exit_btn_2">
+        <widget class="QPushButton" name="btnSalir">
          <property name="text">
           <string>Exit</string>
          </property>
@@ -854,7 +896,7 @@
      </widget>
     </item>
     <item row="0" column="0">
-     <widget class="QWidget" name="icon_only_widget" native="true">
+     <widget class="QWidget" name="widgetMenuIconos" native="true">
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <property name="spacing">
         <number>0</number>
@@ -874,7 +916,7 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QLabel" name="logo_label_1">
+          <widget class="QLabel" name="lblMenuIcono">
            <property name="minimumSize">
             <size>
              <width>50</width>
@@ -891,7 +933,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="resource.qrc">:/icon/icon/Logo.png</pixmap>
+            <pixmap resource="resource.qrc">:/icon/icon/balance.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -1041,7 +1083,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="exit_btn_1">
+        <widget class="QPushButton" name="btnSalirIcono">
          <property name="text">
           <string/>
          </property>
@@ -1068,9 +1110,9 @@
  </resources>
  <connections>
   <connection>
-   <sender>change_btn</sender>
+   <sender>btnCambioMenu</sender>
    <signal>toggled(bool)</signal>
-   <receiver>icon_only_widget</receiver>
+   <receiver>widgetMenuIconos</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1084,9 +1126,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>change_btn</sender>
+   <sender>btnCambioMenu</sender>
    <signal>toggled(bool)</signal>
-   <receiver>full_menu_widget</receiver>
+   <receiver>widgetMenu</receiver>
    <slot>setHidden(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1260,7 +1302,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>exit_btn_2</sender>
+   <sender>btnSalir</sender>
    <signal>clicked()</signal>
    <receiver>ventanaPrincipal</receiver>
    <slot>close()</slot>
@@ -1276,7 +1318,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>exit_btn_1</sender>
+   <sender>btnSalirIcono</sender>
    <signal>clicked()</signal>
    <receiver>ventanaPrincipal</receiver>
    <slot>close()</slot>
