@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>ventanaPrincipal</class>
+ <widget class="QMainWindow" name="ventanaPrincipal">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -1262,7 +1262,7 @@
   <connection>
    <sender>exit_btn_2</sender>
    <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>ventanaPrincipal</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1278,7 +1278,7 @@
   <connection>
    <sender>exit_btn_1</sender>
    <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>ventanaPrincipal</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
