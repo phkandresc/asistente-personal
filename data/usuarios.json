@@ -19,5 +19,12 @@
         "username": "juan",
         "email": "juan@juan.com",
         "password": "ed08c290d7e22f7bb324b15cbadce35b0b348564fd2d5f95752388d86d71bcca"
+    },
+    {
+        "nombre": "Karen",
+        "apellido": "Coraizaca",
+        "username": "karen",
+        "email": "Kcoraizacav1@gmail.com",
+        "password": "c8945b6d6a8bf50aa64d7d9016f8b9709919b68a2dc0c50ee2e4471f5a3dceb0"
     }
 ]

@@ -5,6 +5,7 @@ from controller.RegisterController import RegisterController
 from model.UserRepository import UserRepository
 from PyQt6.QtWidgets import QMessageBox, QMainWindow
 from view.LoginView import Ui_Login
+from controller.MainController import MainController
 
 class LoginController:
     def __init__(self):
@@ -57,7 +58,10 @@ class LoginController:
         if usuario:
             # Muestra mensaje de bienvenida si las credenciales son correctas
             QMessageBox.information(self.vista, "Bienvenido", f"Hola {usuario.nombre} {usuario.apellido}!")
-            # Aquí puedes redirigir a la ventana principal o dashboard
+            # Cierra la ventana de login y abre la ventana principal
+            self.vista.close()
+            self.main_controller = MainController(usuario)
+            self.main_controller.vista.show()
         else:
             # Muestra mensaje de error si las credenciales son incorrectas
             QMessageBox.critical(self.vista, "Error de Inicio de Sesión", "Usuario o contraseña incorrectos.")

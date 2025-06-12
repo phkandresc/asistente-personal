@@ -1,1 +1,24 @@
-[]
+[
+  {
+        "id": 1,
+        "monto": 500.0,
+        "fecha": "2023-10-01",
+        "categoria": {
+            "id": 1,
+            "nombre": "Alquiler"
+        },
+        "descripcion": "Pago de alquiler de la vivienda",
+        "tipo": "egreso"
+    },
+    {
+        "id": 2,
+        "monto": 10.0,
+        "fecha": "2023-10-01",
+        "categoria": {
+            "id": 2,
+            "nombre": "Comida"
+        },
+        "descripcion": "Comida rapida de Burger King",
+        "tipo": "egreso"
+    }
+]

@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'sidebar.ui'
+# Form implementation generated from reading ui file 'ventanaPrincipal.ui'
 #
 # Created by: PyQt6 UI code generator 6.9.0
 #
@@ -7,33 +7,20 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+from . import resource_rc
 
-
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1304, 750)
-        MainWindow.setStyleSheet("#user_btn{\n"
+class Ui_ventanaPrincipal(object):
+    def setupUi(self, ventanaPrincipal):
+        ventanaPrincipal.setObjectName("ventanaPrincipal")
+        ventanaPrincipal.resize(1304, 750)
+        ventanaPrincipal.setStyleSheet("#user_btn{\n"
 "    border: none;\n"
 "    padding: 5px;\n"
 "}\n"
-"\n"
-"#search_btn{\n"
-"    border: none;\n"
-"    padding: 5px;\n"
-"}\n"
-"\n"
-"/*= Style for mainwindow START\n"
-"  ==================================================== */\n"
-"    #MainWindow {\n"
-"        background-color: #fff;\n"
-"    }\n"
-"/*= END\n"
-"  ==================================================== */\n"
 "\n"
 "/*= Style for button to change menu style START\n"
 "  ==================================================== */\n"
-"    #change_btn {\n"
+"    #btnCambioMenu {\n"
 "        padding: 5px;\n"
 "        border: none;\n"
 "        width: 30px;\n"
@@ -42,36 +29,33 @@ class Ui_MainWindow(object):
 "/*= END\n"
 "  ==================================================== */\n"
 "\n"
-"/*= Style for header widget START\n"
-"  ==================================================== */\n"
-"    #widget {\n"
-"        background-color: #f9fafd;\n"
-"    }\n"
-"/*= END\n"
-"  ==================================================== */\n"
-"\n"
 "/*= Style for menu with icon only START\n"
 "  ==================================================== */\n"
 "      /* style for widget */\n"
-"    #icon_only_widget {\n"
-"        background-color: #313a46;\n"
+"    #widgetMenuIconos {\n"
+"        background-color: rgb(242, 242, 242);\n"
 "        width:50px;\n"
 "    }\n"
 "\n"
 "    /* style for QPushButton and QLabel */\n"
-"    #icon_only_widget QPushButton, QLabel {\n"
+"    #widgetMenuIconos QPushButton, QLabel {\n"
 "        height:50px;\n"
 "        border:none;\n"
 "        /* border-bottom: 1px solid #b0b0b0; */\n"
 "    }\n"
 "\n"
-"    #icon_only_widget QPushButton:hover {\n"
+"    #widgetMenuIconos QPushButton:hover {\n"
 "        background-color: rgba( 86, 101, 115, 0.5);\n"
 "    }\n"
+"    \n"
+"#widgetMenuIconos QPushButton:checked {\n"
+"        background-color: #777777;\n"
+"        color: rgb(255, 255, 255);\n"
+"}\n"
 "\n"
 "    /* style for logo image */\n"
-"    #logo_label_1 {\n"
-"        padding: 5px\n"
+"    #lblMenuIcono {\n"
+"        padding: 5px;\n"
 "    }\n"
 "/*= END\n"
 "  ==================================================== */\n"
@@ -79,66 +63,79 @@ class Ui_MainWindow(object):
 "/*= Style for menu with icon and text START\n"
 "  ==================================================== */\n"
 "    /* style for widget */\n"
-"    #full_menu_widget {\n"
-"        background-color: #313a46;\n"
+"    #widgetMenu {\n"
+"        background-color: rgb(242, 242, 242);\n"
 "    }\n"
 "\n"
 "    /* style for QPushButton */\n"
-"    #full_menu_widget QPushButton {\n"
+"    #widgetMenu QPushButton {\n"
+"        height: 25px;\n"
 "        border:none;\n"
 "        border-radius: 3px;\n"
 "        text-align: left;\n"
-"        padding: 8px 0 8px 15px;\n"
+"        padding: 10px 0 10px 18px;\n"
 "        color: #788596;\n"
 "    }\n"
 "\n"
-"    #full_menu_widget QPushButton:hover {\n"
+"    #widgetMenu QPushButton:hover {\n"
 "        background-color: rgba( 86, 101, 115, 0.5);\n"
 "    }\n"
 "\n"
-"    #full_menu_widget QPushButton:checked {\n"
-"        color: #fff;\n"
+"    #widgetMenu QPushButton:checked {\n"
+"        background-color: #777777;\n"
+"        color: rgb(255, 255, 255);\n"
 "    }\n"
 "\n"
 "#paginaResumen #widgetBalance, #widgetIngresos, #widgetEgresos{\n"
 "    background-color: rgb(28, 113, 216);\n"
 "}\n"
 "\n"
+"#barraSuperior {\n"
+"    background-color: rgb(234, 228, 213);\n"
+"}\n"
 "")
-        self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
+        self.centralwidget = QtWidgets.QWidget(parent=ventanaPrincipal)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setSpacing(0)
         self.gridLayout.setObjectName("gridLayout")
-        self.mainWidget = QtWidgets.QWidget(parent=self.centralwidget)
-        self.mainWidget.setObjectName("mainWidget")
-        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.mainWidget)
+        self.widgetPrincipal = QtWidgets.QWidget(parent=self.centralwidget)
+        self.widgetPrincipal.setObjectName("widgetPrincipal")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.widgetPrincipal)
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_5.setSpacing(0)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.barraSuperior = QtWidgets.QWidget(parent=self.mainWidget)
+        self.barraSuperior = QtWidgets.QWidget(parent=self.widgetPrincipal)
         self.barraSuperior.setMinimumSize(QtCore.QSize(0, 40))
         self.barraSuperior.setObjectName("barraSuperior")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.barraSuperior)
         self.horizontalLayout_4.setContentsMargins(0, 0, 9, 0)
         self.horizontalLayout_4.setSpacing(0)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        self.change_btn = QtWidgets.QPushButton(parent=self.barraSuperior)
-        self.change_btn.setText("")
+        self.btnCambioMenu = QtWidgets.QPushButton(parent=self.barraSuperior)
+        self.btnCambioMenu.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icon/icon/menu-4-32.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.change_btn.setIcon(icon)
-        self.change_btn.setIconSize(QtCore.QSize(14, 14))
-        self.change_btn.setCheckable(True)
-        self.change_btn.setObjectName("change_btn")
-        self.horizontalLayout_4.addWidget(self.change_btn)
+        self.btnCambioMenu.setIcon(icon)
+        self.btnCambioMenu.setIconSize(QtCore.QSize(14, 14))
+        self.btnCambioMenu.setCheckable(True)
+        self.btnCambioMenu.setObjectName("btnCambioMenu")
+        self.horizontalLayout_4.addWidget(self.btnCambioMenu)
         spacerItem = QtWidgets.QSpacerItem(236, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_4.addItem(spacerItem)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setSpacing(10)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.horizontalLayout_4.addLayout(self.horizontalLayout)
+        self.lblUsername = QtWidgets.QLabel(parent=self.barraSuperior)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setKerning(True)
+        self.lblUsername.setFont(font)
+        self.lblUsername.setObjectName("lblUsername")
+        self.horizontalLayout_4.addWidget(self.lblUsername)
         spacerItem1 = QtWidgets.QSpacerItem(236, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_4.addItem(spacerItem1)
         self.user_btn = QtWidgets.QPushButton(parent=self.barraSuperior)
@@ -149,40 +146,49 @@ class Ui_MainWindow(object):
         self.user_btn.setObjectName("user_btn")
         self.horizontalLayout_4.addWidget(self.user_btn)
         self.verticalLayout_5.addWidget(self.barraSuperior)
-        self.pilaWidgets = QtWidgets.QStackedWidget(parent=self.mainWidget)
+        self.pilaWidgets = QtWidgets.QStackedWidget(parent=self.widgetPrincipal)
         self.pilaWidgets.setStyleSheet("")
         self.pilaWidgets.setObjectName("pilaWidgets")
         self.paginaResumen = QtWidgets.QWidget()
         self.paginaResumen.setStyleSheet("")
         self.paginaResumen.setObjectName("paginaResumen")
-        self.layoutWidget = QtWidgets.QWidget(parent=self.paginaResumen)
-        self.layoutWidget.setGeometry(QtCore.QRect(41, 21, 283, 61))
-        self.layoutWidget.setObjectName("layoutWidget")
-        self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.layoutWidget)
-        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_9 = QtWidgets.QGridLayout(self.paginaResumen)
+        self.gridLayout_9.setObjectName("gridLayout_9")
+        spacerItem2 = QtWidgets.QSpacerItem(20, 33, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.gridLayout_9.addItem(spacerItem2, 0, 1, 1, 1)
+        spacerItem3 = QtWidgets.QSpacerItem(138, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_9.addItem(spacerItem3, 1, 0, 1, 1)
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.verticalLayout_17 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_17.setObjectName("verticalLayout_17")
+        self.verticalLayout_16 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_16.setContentsMargins(-1, -1, -1, 10)
+        self.verticalLayout_16.setSpacing(8)
+        self.verticalLayout_16.setObjectName("verticalLayout_16")
+        self.verticalLayout_11 = QtWidgets.QVBoxLayout()
         self.verticalLayout_11.setObjectName("verticalLayout_11")
-        self.label_4 = QtWidgets.QLabel(parent=self.layoutWidget)
+        self.label_4 = QtWidgets.QLabel(parent=self.paginaResumen)
         font = QtGui.QFont()
         font.setPointSize(18)
         font.setBold(True)
         self.label_4.setFont(font)
         self.label_4.setObjectName("label_4")
         self.verticalLayout_11.addWidget(self.label_4)
-        self.label_11 = QtWidgets.QLabel(parent=self.layoutWidget)
+        self.label_11 = QtWidgets.QLabel(parent=self.paginaResumen)
         font = QtGui.QFont()
         font.setPointSize(14)
         self.label_11.setFont(font)
         self.label_11.setObjectName("label_11")
         self.verticalLayout_11.addWidget(self.label_11)
-        self.layoutWidget1 = QtWidgets.QWidget(parent=self.paginaResumen)
-        self.layoutWidget1.setGeometry(QtCore.QRect(40, 130, 281, 191))
-        self.layoutWidget1.setObjectName("layoutWidget1")
-        self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.layoutWidget1)
-        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_16.addLayout(self.verticalLayout_11)
+        spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_16.addItem(spacerItem4)
+        self.verticalLayout_13 = QtWidgets.QVBoxLayout()
         self.verticalLayout_13.setObjectName("verticalLayout_13")
-        self.lblBalanceGeneral = QtWidgets.QLabel(parent=self.layoutWidget1)
+        self.lblBalanceGeneral = QtWidgets.QLabel(parent=self.paginaResumen)
         font = QtGui.QFont()
-        font.setPointSize(14)
+        font.setPointSize(12)
         font.setBold(True)
         font.setKerning(True)
         self.lblBalanceGeneral.setFont(font)
@@ -192,7 +198,7 @@ class Ui_MainWindow(object):
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.verticalLayout_12 = QtWidgets.QVBoxLayout()
         self.verticalLayout_12.setObjectName("verticalLayout_12")
-        self.label_12 = QtWidgets.QLabel(parent=self.layoutWidget1)
+        self.label_12 = QtWidgets.QLabel(parent=self.paginaResumen)
         self.label_12.setMinimumSize(QtCore.QSize(50, 0))
         self.label_12.setMaximumSize(QtCore.QSize(50, 44))
         self.label_12.setText("")
@@ -200,7 +206,7 @@ class Ui_MainWindow(object):
         self.label_12.setScaledContents(True)
         self.label_12.setObjectName("label_12")
         self.verticalLayout_12.addWidget(self.label_12)
-        self.label_13 = QtWidgets.QLabel(parent=self.layoutWidget1)
+        self.label_13 = QtWidgets.QLabel(parent=self.paginaResumen)
         self.label_13.setMinimumSize(QtCore.QSize(50, 0))
         self.label_13.setMaximumSize(QtCore.QSize(50, 44))
         self.label_13.setText("")
@@ -208,7 +214,7 @@ class Ui_MainWindow(object):
         self.label_13.setScaledContents(True)
         self.label_13.setObjectName("label_13")
         self.verticalLayout_12.addWidget(self.label_13)
-        self.label_14 = QtWidgets.QLabel(parent=self.layoutWidget1)
+        self.label_14 = QtWidgets.QLabel(parent=self.paginaResumen)
         self.label_14.setMinimumSize(QtCore.QSize(50, 0))
         self.label_14.setMaximumSize(QtCore.QSize(50, 44))
         self.label_14.setText("")
@@ -221,74 +227,120 @@ class Ui_MainWindow(object):
         self.verticalLayout_10.setObjectName("verticalLayout_10")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout()
         self.verticalLayout_6.setObjectName("verticalLayout_6")
-        self.label_2 = QtWidgets.QLabel(parent=self.layoutWidget1)
+        self.label_2 = QtWidgets.QLabel(parent=self.paginaResumen)
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
         self.verticalLayout_6.addWidget(self.label_2)
-        self.lblBalance_2 = QtWidgets.QLabel(parent=self.layoutWidget1)
+        self.lblSaldo = QtWidgets.QLabel(parent=self.paginaResumen)
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
-        self.lblBalance_2.setFont(font)
-        self.lblBalance_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
-        self.lblBalance_2.setObjectName("lblBalance_2")
-        self.verticalLayout_6.addWidget(self.lblBalance_2)
+        self.lblSaldo.setFont(font)
+        self.lblSaldo.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.lblSaldo.setObjectName("lblSaldo")
+        self.verticalLayout_6.addWidget(self.lblSaldo)
         self.verticalLayout_10.addLayout(self.verticalLayout_6)
         self.verticalLayout_7 = QtWidgets.QVBoxLayout()
         self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.label_15 = QtWidgets.QLabel(parent=self.layoutWidget1)
+        self.label_15 = QtWidgets.QLabel(parent=self.paginaResumen)
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_15.setFont(font)
         self.label_15.setObjectName("label_15")
         self.verticalLayout_7.addWidget(self.label_15)
-        self.lblBalance_4 = QtWidgets.QLabel(parent=self.layoutWidget1)
+        self.lblIngresos = QtWidgets.QLabel(parent=self.paginaResumen)
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
-        self.lblBalance_4.setFont(font)
-        self.lblBalance_4.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
-        self.lblBalance_4.setObjectName("lblBalance_4")
-        self.verticalLayout_7.addWidget(self.lblBalance_4)
+        self.lblIngresos.setFont(font)
+        self.lblIngresos.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.lblIngresos.setObjectName("lblIngresos")
+        self.verticalLayout_7.addWidget(self.lblIngresos)
         self.verticalLayout_10.addLayout(self.verticalLayout_7)
         self.verticalLayout_9 = QtWidgets.QVBoxLayout()
         self.verticalLayout_9.setObjectName("verticalLayout_9")
-        self.label_17 = QtWidgets.QLabel(parent=self.layoutWidget1)
+        self.label_17 = QtWidgets.QLabel(parent=self.paginaResumen)
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_17.setFont(font)
         self.label_17.setObjectName("label_17")
         self.verticalLayout_9.addWidget(self.label_17)
-        self.lblBalance_6 = QtWidgets.QLabel(parent=self.layoutWidget1)
+        self.lblEgresos = QtWidgets.QLabel(parent=self.paginaResumen)
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
-        self.lblBalance_6.setFont(font)
-        self.lblBalance_6.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
-        self.lblBalance_6.setObjectName("lblBalance_6")
-        self.verticalLayout_9.addWidget(self.lblBalance_6)
+        self.lblEgresos.setFont(font)
+        self.lblEgresos.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.lblEgresos.setObjectName("lblEgresos")
+        self.verticalLayout_9.addWidget(self.lblEgresos)
         self.verticalLayout_10.addLayout(self.verticalLayout_9)
         self.gridLayout_2.addLayout(self.verticalLayout_10, 0, 1, 1, 1)
         self.verticalLayout_13.addLayout(self.gridLayout_2)
-        self.layoutWidget2 = QtWidgets.QWidget(parent=self.paginaResumen)
-        self.layoutWidget2.setGeometry(QtCore.QRect(40, 360, 281, 251))
-        self.layoutWidget2.setObjectName("layoutWidget2")
-        self.verticalLayout_14 = QtWidgets.QVBoxLayout(self.layoutWidget2)
-        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_16.addLayout(self.verticalLayout_13)
+        self.verticalLayout_17.addLayout(self.verticalLayout_16)
+        self.verticalLayout_14 = QtWidgets.QVBoxLayout()
         self.verticalLayout_14.setObjectName("verticalLayout_14")
-        self.lblBalanceGeneral_2 = QtWidgets.QLabel(parent=self.layoutWidget2)
+        self.lblBalanceGeneral_2 = QtWidgets.QLabel(parent=self.paginaResumen)
         font = QtGui.QFont()
-        font.setPointSize(14)
+        font.setPointSize(12)
         font.setBold(True)
         font.setKerning(True)
         self.lblBalanceGeneral_2.setFont(font)
         self.lblBalanceGeneral_2.setObjectName("lblBalanceGeneral_2")
         self.verticalLayout_14.addWidget(self.lblBalanceGeneral_2)
-        self.listWidget = QtWidgets.QListWidget(parent=self.layoutWidget2)
-        self.listWidget.setObjectName("listWidget")
-        self.verticalLayout_14.addWidget(self.listWidget)
+        self.listTransacciones = QtWidgets.QListWidget(parent=self.paginaResumen)
+        self.listTransacciones.setMinimumSize(QtCore.QSize(417, 269))
+        self.listTransacciones.setMaximumSize(QtCore.QSize(417, 269))
+        self.listTransacciones.setObjectName("listTransacciones")
+        self.verticalLayout_14.addWidget(self.listTransacciones)
+        self.verticalLayout_17.addLayout(self.verticalLayout_14)
+        self.horizontalLayout_5.addLayout(self.verticalLayout_17)
+        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_5.addItem(spacerItem5)
+        self.formLayout = QtWidgets.QFormLayout()
+        self.formLayout.setObjectName("formLayout")
+        self.verticalLayout_8 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_8.setObjectName("verticalLayout_8")
+        self.lblBalanceGeneral_3 = QtWidgets.QLabel(parent=self.paginaResumen)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setKerning(True)
+        self.lblBalanceGeneral_3.setFont(font)
+        self.lblBalanceGeneral_3.setObjectName("lblBalanceGeneral_3")
+        self.verticalLayout_8.addWidget(self.lblBalanceGeneral_3)
+        self.widgetGraficoIngresos = QtWidgets.QWidget(parent=self.paginaResumen)
+        self.widgetGraficoIngresos.setMinimumSize(QtCore.QSize(300, 250))
+        self.widgetGraficoIngresos.setMaximumSize(QtCore.QSize(300, 250))
+        self.widgetGraficoIngresos.setObjectName("widgetGraficoIngresos")
+        self.verticalLayout_8.addWidget(self.widgetGraficoIngresos)
+        self.formLayout.setLayout(0, QtWidgets.QFormLayout.ItemRole.LabelRole, self.verticalLayout_8)
+        spacerItem6 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.formLayout.setItem(1, QtWidgets.QFormLayout.ItemRole.LabelRole, spacerItem6)
+        self.verticalLayout_15 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_15.setObjectName("verticalLayout_15")
+        self.lblBalanceGeneral_4 = QtWidgets.QLabel(parent=self.paginaResumen)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setKerning(True)
+        self.lblBalanceGeneral_4.setFont(font)
+        self.lblBalanceGeneral_4.setObjectName("lblBalanceGeneral_4")
+        self.verticalLayout_15.addWidget(self.lblBalanceGeneral_4)
+        self.widgetGraficoEgresos = QtWidgets.QWidget(parent=self.paginaResumen)
+        self.widgetGraficoEgresos.setMinimumSize(QtCore.QSize(300, 250))
+        self.widgetGraficoEgresos.setMaximumSize(QtCore.QSize(300, 250))
+        self.widgetGraficoEgresos.setObjectName("widgetGraficoEgresos")
+        self.verticalLayout_15.addWidget(self.widgetGraficoEgresos)
+        self.formLayout.setLayout(2, QtWidgets.QFormLayout.ItemRole.LabelRole, self.verticalLayout_15)
+        self.horizontalLayout_5.addLayout(self.formLayout)
+        self.gridLayout_9.addLayout(self.horizontalLayout_5, 1, 1, 2, 1)
+        spacerItem7 = QtWidgets.QSpacerItem(138, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_9.addItem(spacerItem7, 2, 2, 1, 1)
+        spacerItem8 = QtWidgets.QSpacerItem(20, 33, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.gridLayout_9.addItem(spacerItem8, 3, 1, 1, 1)
         self.pilaWidgets.addWidget(self.paginaResumen)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
@@ -363,33 +415,33 @@ class Ui_MainWindow(object):
         self.gridLayout_8.addWidget(self.label_10, 0, 0, 1, 1)
         self.pilaWidgets.addWidget(self.page_7)
         self.verticalLayout_5.addWidget(self.pilaWidgets)
-        self.gridLayout.addWidget(self.mainWidget, 0, 2, 1, 1)
-        self.full_menu_widget = QtWidgets.QWidget(parent=self.centralwidget)
-        self.full_menu_widget.setObjectName("full_menu_widget")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.full_menu_widget)
+        self.gridLayout.addWidget(self.widgetPrincipal, 0, 2, 1, 1)
+        self.widgetMenu = QtWidgets.QWidget(parent=self.centralwidget)
+        self.widgetMenu.setObjectName("widgetMenu")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.widgetMenu)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_2.setSpacing(0)
+        self.horizontalLayout_2.setSpacing(10)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.logo_label_2 = QtWidgets.QLabel(parent=self.full_menu_widget)
+        self.logo_label_2 = QtWidgets.QLabel(parent=self.widgetMenu)
         self.logo_label_2.setMinimumSize(QtCore.QSize(40, 40))
         self.logo_label_2.setMaximumSize(QtCore.QSize(40, 40))
         self.logo_label_2.setText("")
-        self.logo_label_2.setPixmap(QtGui.QPixmap(":/icon/icon/Logo.png"))
+        self.logo_label_2.setPixmap(QtGui.QPixmap(":/icon/icon/balance.png"))
         self.logo_label_2.setScaledContents(True)
         self.logo_label_2.setObjectName("logo_label_2")
         self.horizontalLayout_2.addWidget(self.logo_label_2)
-        self.logo_label_3 = QtWidgets.QLabel(parent=self.full_menu_widget)
+        self.lblLogoMenuGrande = QtWidgets.QLabel(parent=self.widgetMenu)
         font = QtGui.QFont()
         font.setPointSize(15)
-        self.logo_label_3.setFont(font)
-        self.logo_label_3.setObjectName("logo_label_3")
-        self.horizontalLayout_2.addWidget(self.logo_label_3)
+        self.lblLogoMenuGrande.setFont(font)
+        self.lblLogoMenuGrande.setObjectName("lblLogoMenuGrande")
+        self.horizontalLayout_2.addWidget(self.lblLogoMenuGrande)
         self.verticalLayout_4.addLayout(self.horizontalLayout_2)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.btnResumen = QtWidgets.QPushButton(parent=self.full_menu_widget)
+        self.btnResumen = QtWidgets.QPushButton(parent=self.widgetMenu)
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap(":/icon/icon/home-4-32.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         icon2.addPixmap(QtGui.QPixmap(":/icon/icon/home-4-48.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
@@ -399,7 +451,7 @@ class Ui_MainWindow(object):
         self.btnResumen.setAutoExclusive(True)
         self.btnResumen.setObjectName("btnResumen")
         self.verticalLayout_2.addWidget(self.btnResumen)
-        self.dashborad_btn_2 = QtWidgets.QPushButton(parent=self.full_menu_widget)
+        self.dashborad_btn_2 = QtWidgets.QPushButton(parent=self.widgetMenu)
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap(":/icon/icon/dashboard-5-32.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         icon3.addPixmap(QtGui.QPixmap(":/icon/icon/dashboard-5-48.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
@@ -409,7 +461,7 @@ class Ui_MainWindow(object):
         self.dashborad_btn_2.setAutoExclusive(True)
         self.dashborad_btn_2.setObjectName("dashborad_btn_2")
         self.verticalLayout_2.addWidget(self.dashborad_btn_2)
-        self.orders_btn_2 = QtWidgets.QPushButton(parent=self.full_menu_widget)
+        self.orders_btn_2 = QtWidgets.QPushButton(parent=self.widgetMenu)
         icon4 = QtGui.QIcon()
         icon4.addPixmap(QtGui.QPixmap(":/icon/icon/activity-feed-32.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         icon4.addPixmap(QtGui.QPixmap(":/icon/icon/activity-feed-48.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
@@ -419,7 +471,7 @@ class Ui_MainWindow(object):
         self.orders_btn_2.setAutoExclusive(True)
         self.orders_btn_2.setObjectName("orders_btn_2")
         self.verticalLayout_2.addWidget(self.orders_btn_2)
-        self.products_btn_2 = QtWidgets.QPushButton(parent=self.full_menu_widget)
+        self.products_btn_2 = QtWidgets.QPushButton(parent=self.widgetMenu)
         icon5 = QtGui.QIcon()
         icon5.addPixmap(QtGui.QPixmap(":/icon/icon/product-32.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         icon5.addPixmap(QtGui.QPixmap(":/icon/icon/product-48.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
@@ -429,7 +481,7 @@ class Ui_MainWindow(object):
         self.products_btn_2.setAutoExclusive(True)
         self.products_btn_2.setObjectName("products_btn_2")
         self.verticalLayout_2.addWidget(self.products_btn_2)
-        self.customers_btn_2 = QtWidgets.QPushButton(parent=self.full_menu_widget)
+        self.customers_btn_2 = QtWidgets.QPushButton(parent=self.widgetMenu)
         icon6 = QtGui.QIcon()
         icon6.addPixmap(QtGui.QPixmap(":/icon/icon/group-32.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         icon6.addPixmap(QtGui.QPixmap(":/icon/icon/group-48.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
@@ -440,37 +492,37 @@ class Ui_MainWindow(object):
         self.customers_btn_2.setObjectName("customers_btn_2")
         self.verticalLayout_2.addWidget(self.customers_btn_2)
         self.verticalLayout_4.addLayout(self.verticalLayout_2)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 373, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_4.addItem(spacerItem2)
-        self.exit_btn_2 = QtWidgets.QPushButton(parent=self.full_menu_widget)
+        spacerItem9 = QtWidgets.QSpacerItem(20, 373, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_4.addItem(spacerItem9)
+        self.btnSalir = QtWidgets.QPushButton(parent=self.widgetMenu)
         icon7 = QtGui.QIcon()
         icon7.addPixmap(QtGui.QPixmap(":/icon/icon/close-window-64.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.exit_btn_2.setIcon(icon7)
-        self.exit_btn_2.setIconSize(QtCore.QSize(14, 14))
-        self.exit_btn_2.setObjectName("exit_btn_2")
-        self.verticalLayout_4.addWidget(self.exit_btn_2)
-        self.gridLayout.addWidget(self.full_menu_widget, 0, 1, 1, 1)
-        self.icon_only_widget = QtWidgets.QWidget(parent=self.centralwidget)
-        self.icon_only_widget.setObjectName("icon_only_widget")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.icon_only_widget)
+        self.btnSalir.setIcon(icon7)
+        self.btnSalir.setIconSize(QtCore.QSize(14, 14))
+        self.btnSalir.setObjectName("btnSalir")
+        self.verticalLayout_4.addWidget(self.btnSalir)
+        self.gridLayout.addWidget(self.widgetMenu, 0, 1, 1, 1)
+        self.widgetMenuIconos = QtWidgets.QWidget(parent=self.centralwidget)
+        self.widgetMenuIconos.setObjectName("widgetMenuIconos")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.widgetMenuIconos)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.logo_label_1 = QtWidgets.QLabel(parent=self.icon_only_widget)
-        self.logo_label_1.setMinimumSize(QtCore.QSize(50, 50))
-        self.logo_label_1.setMaximumSize(QtCore.QSize(50, 50))
-        self.logo_label_1.setText("")
-        self.logo_label_1.setPixmap(QtGui.QPixmap(":/icon/icon/Logo.png"))
-        self.logo_label_1.setScaledContents(True)
-        self.logo_label_1.setObjectName("logo_label_1")
-        self.horizontalLayout_3.addWidget(self.logo_label_1)
+        self.lblMenuIcono = QtWidgets.QLabel(parent=self.widgetMenuIconos)
+        self.lblMenuIcono.setMinimumSize(QtCore.QSize(50, 50))
+        self.lblMenuIcono.setMaximumSize(QtCore.QSize(50, 50))
+        self.lblMenuIcono.setText("")
+        self.lblMenuIcono.setPixmap(QtGui.QPixmap(":/icon/icon/balance.png"))
+        self.lblMenuIcono.setScaledContents(True)
+        self.lblMenuIcono.setObjectName("lblMenuIcono")
+        self.horizontalLayout_3.addWidget(self.lblMenuIcono)
         self.verticalLayout_3.addLayout(self.horizontalLayout_3)
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.btnResumen_2 = QtWidgets.QPushButton(parent=self.icon_only_widget)
+        self.btnResumen_2 = QtWidgets.QPushButton(parent=self.widgetMenuIconos)
         self.btnResumen_2.setText("")
         self.btnResumen_2.setIcon(icon2)
         self.btnResumen_2.setIconSize(QtCore.QSize(20, 20))
@@ -478,7 +530,7 @@ class Ui_MainWindow(object):
         self.btnResumen_2.setAutoExclusive(True)
         self.btnResumen_2.setObjectName("btnResumen_2")
         self.verticalLayout.addWidget(self.btnResumen_2)
-        self.dashborad_btn_1 = QtWidgets.QPushButton(parent=self.icon_only_widget)
+        self.dashborad_btn_1 = QtWidgets.QPushButton(parent=self.widgetMenuIconos)
         self.dashborad_btn_1.setText("")
         self.dashborad_btn_1.setIcon(icon3)
         self.dashborad_btn_1.setIconSize(QtCore.QSize(20, 20))
@@ -486,7 +538,7 @@ class Ui_MainWindow(object):
         self.dashborad_btn_1.setAutoExclusive(True)
         self.dashborad_btn_1.setObjectName("dashborad_btn_1")
         self.verticalLayout.addWidget(self.dashborad_btn_1)
-        self.orders_btn_1 = QtWidgets.QPushButton(parent=self.icon_only_widget)
+        self.orders_btn_1 = QtWidgets.QPushButton(parent=self.widgetMenuIconos)
         self.orders_btn_1.setText("")
         self.orders_btn_1.setIcon(icon4)
         self.orders_btn_1.setIconSize(QtCore.QSize(20, 20))
@@ -494,7 +546,7 @@ class Ui_MainWindow(object):
         self.orders_btn_1.setAutoExclusive(True)
         self.orders_btn_1.setObjectName("orders_btn_1")
         self.verticalLayout.addWidget(self.orders_btn_1)
-        self.products_btn_1 = QtWidgets.QPushButton(parent=self.icon_only_widget)
+        self.products_btn_1 = QtWidgets.QPushButton(parent=self.widgetMenuIconos)
         self.products_btn_1.setText("")
         self.products_btn_1.setIcon(icon5)
         self.products_btn_1.setIconSize(QtCore.QSize(20, 20))
@@ -502,7 +554,7 @@ class Ui_MainWindow(object):
         self.products_btn_1.setAutoExclusive(True)
         self.products_btn_1.setObjectName("products_btn_1")
         self.verticalLayout.addWidget(self.products_btn_1)
-        self.customers_btn_1 = QtWidgets.QPushButton(parent=self.icon_only_widget)
+        self.customers_btn_1 = QtWidgets.QPushButton(parent=self.widgetMenuIconos)
         self.customers_btn_1.setText("")
         self.customers_btn_1.setIcon(icon6)
         self.customers_btn_1.setIconSize(QtCore.QSize(20, 20))
@@ -511,21 +563,21 @@ class Ui_MainWindow(object):
         self.customers_btn_1.setObjectName("customers_btn_1")
         self.verticalLayout.addWidget(self.customers_btn_1)
         self.verticalLayout_3.addLayout(self.verticalLayout)
-        spacerItem3 = QtWidgets.QSpacerItem(20, 375, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_3.addItem(spacerItem3)
-        self.exit_btn_1 = QtWidgets.QPushButton(parent=self.icon_only_widget)
-        self.exit_btn_1.setText("")
-        self.exit_btn_1.setIcon(icon7)
-        self.exit_btn_1.setIconSize(QtCore.QSize(20, 20))
-        self.exit_btn_1.setObjectName("exit_btn_1")
-        self.verticalLayout_3.addWidget(self.exit_btn_1)
-        self.gridLayout.addWidget(self.icon_only_widget, 0, 0, 1, 1)
-        MainWindow.setCentralWidget(self.centralwidget)
+        spacerItem10 = QtWidgets.QSpacerItem(20, 375, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_3.addItem(spacerItem10)
+        self.btnSalirIcono = QtWidgets.QPushButton(parent=self.widgetMenuIconos)
+        self.btnSalirIcono.setText("")
+        self.btnSalirIcono.setIcon(icon7)
+        self.btnSalirIcono.setIconSize(QtCore.QSize(20, 20))
+        self.btnSalirIcono.setObjectName("btnSalirIcono")
+        self.verticalLayout_3.addWidget(self.btnSalirIcono)
+        self.gridLayout.addWidget(self.widgetMenuIconos, 0, 0, 1, 1)
+        ventanaPrincipal.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
+        self.retranslateUi(ventanaPrincipal)
         self.pilaWidgets.setCurrentIndex(0)
-        self.change_btn.toggled['bool'].connect(self.icon_only_widget.setVisible) # type: ignore
-        self.change_btn.toggled['bool'].connect(self.full_menu_widget.setHidden) # type: ignore
+        self.btnCambioMenu.toggled['bool'].connect(self.widgetMenuIconos.setVisible) # type: ignore
+        self.btnCambioMenu.toggled['bool'].connect(self.widgetMenu.setHidden) # type: ignore
         self.btnResumen_2.toggled['bool'].connect(self.btnResumen.setChecked) # type: ignore
         self.dashborad_btn_1.toggled['bool'].connect(self.dashborad_btn_2.setChecked) # type: ignore
         self.orders_btn_1.toggled['bool'].connect(self.orders_btn_2.setChecked) # type: ignore
@@ -536,33 +588,36 @@ class Ui_MainWindow(object):
         self.orders_btn_2.toggled['bool'].connect(self.orders_btn_1.setChecked) # type: ignore
         self.products_btn_2.toggled['bool'].connect(self.products_btn_1.setChecked) # type: ignore
         self.customers_btn_2.toggled['bool'].connect(self.customers_btn_1.setChecked) # type: ignore
-        self.exit_btn_2.clicked.connect(MainWindow.close) # type: ignore
-        self.exit_btn_1.clicked.connect(MainWindow.close) # type: ignore
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.btnSalir.clicked.connect(ventanaPrincipal.close) # type: ignore
+        self.btnSalirIcono.clicked.connect(ventanaPrincipal.close) # type: ignore
+        QtCore.QMetaObject.connectSlotsByName(ventanaPrincipal)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, ventanaPrincipal):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_4.setText(_translate("MainWindow", "Resumen"))
-        self.label_11.setText(_translate("MainWindow", "Este es tu resumen de finanzas"))
-        self.lblBalanceGeneral.setText(_translate("MainWindow", "Balance General"))
-        self.label_2.setText(_translate("MainWindow", "Saldo:"))
-        self.lblBalance_2.setText(_translate("MainWindow", "0.00"))
-        self.label_15.setText(_translate("MainWindow", "Ingresos:"))
-        self.lblBalance_4.setText(_translate("MainWindow", "0.00"))
-        self.label_17.setText(_translate("MainWindow", "Egresos:"))
-        self.lblBalance_6.setText(_translate("MainWindow", "0.00"))
-        self.lblBalanceGeneral_2.setText(_translate("MainWindow", "Transacciones recientes"))
-        self.label_5.setText(_translate("MainWindow", "Dashboard Page"))
-        self.label_6.setText(_translate("MainWindow", "Orders Page"))
-        self.label_7.setText(_translate("MainWindow", "Product Page"))
-        self.label_8.setText(_translate("MainWindow", "Customers Page"))
-        self.label_9.setText(_translate("MainWindow", "Search Page"))
-        self.label_10.setText(_translate("MainWindow", "User Page"))
-        self.logo_label_3.setText(_translate("MainWindow", "Finanzas"))
-        self.btnResumen.setText(_translate("MainWindow", "Resumen"))
-        self.dashborad_btn_2.setText(_translate("MainWindow", "Dashboard"))
-        self.orders_btn_2.setText(_translate("MainWindow", "Orders"))
-        self.products_btn_2.setText(_translate("MainWindow", "Products"))
-        self.customers_btn_2.setText(_translate("MainWindow", "Customers"))
-        self.exit_btn_2.setText(_translate("MainWindow", "Exit"))
+        ventanaPrincipal.setWindowTitle(_translate("ventanaPrincipal", "MainWindow"))
+        self.lblUsername.setText(_translate("ventanaPrincipal", "Bienvenido, Username"))
+        self.label_4.setText(_translate("ventanaPrincipal", "Resumen"))
+        self.label_11.setText(_translate("ventanaPrincipal", "Este es tu resumen de finanzas"))
+        self.lblBalanceGeneral.setText(_translate("ventanaPrincipal", "Balance General"))
+        self.label_2.setText(_translate("ventanaPrincipal", "Saldo:"))
+        self.lblSaldo.setText(_translate("ventanaPrincipal", "0.00"))
+        self.label_15.setText(_translate("ventanaPrincipal", "Ingresos:"))
+        self.lblIngresos.setText(_translate("ventanaPrincipal", "0.00"))
+        self.label_17.setText(_translate("ventanaPrincipal", "Egresos:"))
+        self.lblEgresos.setText(_translate("ventanaPrincipal", "0.00"))
+        self.lblBalanceGeneral_2.setText(_translate("ventanaPrincipal", "Transacciones recientes"))
+        self.lblBalanceGeneral_3.setText(_translate("ventanaPrincipal", "Ingresos por categoria"))
+        self.lblBalanceGeneral_4.setText(_translate("ventanaPrincipal", "Egresos por categoria"))
+        self.label_5.setText(_translate("ventanaPrincipal", "Dashboard Page"))
+        self.label_6.setText(_translate("ventanaPrincipal", "Orders Page"))
+        self.label_7.setText(_translate("ventanaPrincipal", "Product Page"))
+        self.label_8.setText(_translate("ventanaPrincipal", "Customers Page"))
+        self.label_9.setText(_translate("ventanaPrincipal", "Search Page"))
+        self.label_10.setText(_translate("ventanaPrincipal", "User Page"))
+        self.lblLogoMenuGrande.setText(_translate("ventanaPrincipal", "Finanzas"))
+        self.btnResumen.setText(_translate("ventanaPrincipal", "Resumen"))
+        self.dashborad_btn_2.setText(_translate("ventanaPrincipal", "Dashboard"))
+        self.orders_btn_2.setText(_translate("ventanaPrincipal", "Orders"))
+        self.products_btn_2.setText(_translate("ventanaPrincipal", "Products"))
+        self.customers_btn_2.setText(_translate("ventanaPrincipal", "Customers"))
+        self.btnSalir.setText(_translate("ventanaPrincipal", "Exit"))

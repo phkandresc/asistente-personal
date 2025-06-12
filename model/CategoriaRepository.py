@@ -1,8 +1,8 @@
 import json
 import os
 from model.Categoria import Categoria
-PATH_CATEGORIAS_INGRESOS = "../data/categorias_ingresos.json"
-PATH_CATEGORIAS_ENGRESOS = "../data/categorias_egresos.json"
+PATH_CATEGORIAS_INGRESOS = "./data/categorias_ingresos.json"
+PATH_CATEGORIAS_EGRESOS = "./data/categorias_egresos.json"
 
 
 class CategoriaRepository:
@@ -32,8 +32,8 @@ class CategoriaRepository:
         Carga las categorías de egresos del sistema.
         Retorna una lista de categorías de egresos.
         """
-        if os.path.exists(PATH_CATEGORIAS_ENGRESOS) and os.path.getsize(PATH_CATEGORIAS_ENGRESOS) > 0:
-            with open(PATH_CATEGORIAS_ENGRESOS, 'r', encoding='utf-8') as f:
+        if os.path.exists(PATH_CATEGORIAS_EGRESOS) and os.path.getsize(PATH_CATEGORIAS_EGRESOS) > 0:
+            with open(PATH_CATEGORIAS_EGRESOS, 'r', encoding='utf-8') as f:
                 dic_categorias_egreso = json.load(f)
                 # Convierte cada diccionario de categoría a una instancia de Categoria
                 return [Categoria.from_dict(categoria) for categoria in dic_categorias_egreso]

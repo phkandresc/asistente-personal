@@ -9,7 +9,7 @@ class TransaccionRepository:
     de diferentes usuarios, utilizando archivos JSON por usuario y tipo.
     """
 
-    def __init__(self, base_path="../data/usuarios"):
+    def __init__(self, base_path="./data/usuarios"):
         """
         Inicializa el repositorio con la ruta base donde se almacenan los datos de usuarios.
         """
@@ -28,6 +28,8 @@ class TransaccionRepository:
         para el usuario especificado. Si el archivo no existe o está vacío, retorna una lista vacía.
         """
         ruta_usuario = self.obtener_ruta_usuario(username, tipo)
+        print(os.path.exists(ruta_usuario))
+        print(ruta_usuario)
         if os.path.exists(ruta_usuario) and os.path.getsize(ruta_usuario) > 0:
             with open(ruta_usuario, 'r', encoding='utf-8') as f:
                 transacciones = json.load(f)
