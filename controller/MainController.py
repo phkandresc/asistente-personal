@@ -1,6 +1,7 @@
 from PyQt6 import QtWidgets
 from PyQt6.QtWidgets import QPushButton, QMainWindow, QListWidgetItem
 
+from model.UserRepository import UserRepository
 from view.TransaccionWidget import TransaccionWidget
 from view.ventanaPrincipal import Ui_ventanaPrincipal
 from model.TransaccionRepository import TransaccionRepository
@@ -11,35 +12,31 @@ from model.CategoriaRepository import CategoriaRepository
 class MainController:
     def __init__(self, usuario):
         self.vista = QMainWindow()
-
         self.ui = Ui_ventanaPrincipal()
         self.ui.setupUi(self.vista)
-
         self.ui.widgetMenuIconos.hide()
         self.ui.pilaWidgets.setCurrentIndex(0)
         self.ui.btnResumen.setChecked(True)
-
         self.ui.btnResumen.toggled.connect(lambda: self.cambiar_pagina(0))
-
-        # Usuario con credenciales correctas
         self.usuario = usuario
+        print(type(usuario))
         self.ui.lblUsername.setText(f"Bienvenido, {self.usuario.nombre} {self.usuario.apellido}")
-
-        # Widgets de gráficos de pastel
-        self.pie_ingresos = PieChartWidget()
-        self.pie_egresos = PieChartWidget()
-        # Limpiar y agregar los widgets de pastel a los contenedores
-        layout_ingresos = QtWidgets.QVBoxLayout(self.ui.widgetGraficoIngresos)
-        layout_ingresos.setContentsMargins(0, 0, 0, 0)
-        layout_ingresos.addWidget(self.pie_ingresos)
-        layout_egresos = QtWidgets.QVBoxLayout(self.ui.widgetGraficoEgresos)
-        layout_egresos.setContentsMargins(0, 0, 0, 0)
-        layout_egresos.addWidget(self.pie_egresos)
-
-        # Cargar datos financieros
+        self._init_pie_charts()
         self.cargar_resumen_financiero()
         self.cargar_ultimas_transacciones()
         self.cargar_graficos_categorias()
+
+    def _init_pie_charts(self):
+        """Inicializa y agrega los widgets de gráficos de pastel a los layouts correspondientes."""
+        self.pie_ingresos = PieChartWidget()
+        self.pie_egresos = PieChartWidget()
+        for widget, pie in [
+            (self.ui.widgetGraficoIngresos, self.pie_ingresos),
+            (self.ui.widgetGraficoEgresos, self.pie_egresos)
+        ]:
+            layout = QtWidgets.QVBoxLayout(widget)
+            layout.setContentsMargins(0, 0, 0, 0)
+            layout.addWidget(pie)
 
     def cargar_resumen_financiero(self):
         repo = TransaccionRepository()
@@ -126,6 +123,9 @@ class MainController:
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    controlador = MainController()
+    repositorio = UserRepository()
+    print(repositorio.usuarios)
+    usuario_prueba = repositorio.validar_credenciales("phkandres", "phkandres")
+    controlador = MainController(usuario_prueba)
     controlador.vista.show()
     sys.exit(app.exec())

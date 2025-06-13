@@ -1,8 +1,12 @@
 import json
 import os
 from model.Categoria import Categoria
-PATH_CATEGORIAS_INGRESOS = "./data/categorias_ingresos.json"
-PATH_CATEGORIAS_EGRESOS = "./data/categorias_egresos.json"
+PATH_CATEGORIAS_INGRESOS = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "../data/categorias_ingresos.json"
+)
+PATH_CATEGORIAS_EGRESOS = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "../data/categorias_egresos.json"
+)
 
 
 class CategoriaRepository:

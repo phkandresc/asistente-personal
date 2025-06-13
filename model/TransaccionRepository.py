@@ -9,10 +9,13 @@ class TransaccionRepository:
     de diferentes usuarios, utilizando archivos JSON por usuario y tipo.
     """
 
-    def __init__(self, base_path="./data/usuarios"):
+    def __init__(self, base_path=None):
         """
         Inicializa el repositorio con la ruta base donde se almacenan los datos de usuarios.
         """
+        if base_path is None:
+            base_dir = os.path.abspath(os.path.dirname(__file__))
+            base_path = os.path.join(base_dir, "../data/usuarios")
         self.base_path = base_path
 
     def obtener_ruta_usuario(self, username: str, tipo: str) -> str:

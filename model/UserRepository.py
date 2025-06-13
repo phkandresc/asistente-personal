@@ -15,11 +15,10 @@ class UserRepository:
     validar credenciales y registrar nuevos usuarios.
     """
 
-    def __init__(self, archivo_usuarios="./data/usuarios.json"):
-        """
-        Inicializa el repositorio de usuarios.
-        Carga los usuarios existentes desde el archivo especificado.
-        """
+    def __init__(self, archivo_usuarios=None):
+        if archivo_usuarios is None:
+            base_dir = os.path.dirname(os.path.abspath(__file__))
+            archivo_usuarios = os.path.join(base_dir, "../data/usuarios.json")
         self.archivo_usuarios = archivo_usuarios
         self.usuarios = self.cargar_usuarios()
 
