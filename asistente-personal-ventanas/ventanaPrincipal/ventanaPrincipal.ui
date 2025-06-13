@@ -619,7 +619,7 @@
                   <widget class="QWidget" name="widgetGraficoIngresos" native="true">
                    <property name="minimumSize">
                     <size>
-                     <width>300</width>
+                     <width>450</width>
                      <height>250</height>
                     </size>
                    </property>
@@ -669,13 +669,13 @@
                   <widget class="QWidget" name="widgetGraficoEgresos" native="true">
                    <property name="minimumSize">
                     <size>
-                     <width>300</width>
+                     <width>450</width>
                      <height>250</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>300</width>
+                     <width>400</width>
                      <height>250</height>
                     </size>
                    </property>
@@ -911,9 +911,9 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="dashborad_btn_2">
+          <widget class="QPushButton" name="btnTransacciones">
            <property name="text">
-            <string>Dashboard</string>
+            <string>Transacciones</string>
            </property>
            <property name="icon">
             <iconset resource="resource.qrc">
@@ -1118,7 +1118,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="dashborad_btn_1">
+          <widget class="QPushButton" name="btnTransacciones_2">
            <property name="text">
             <string/>
            </property>
@@ -1304,9 +1304,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>dashborad_btn_1</sender>
+   <sender>btnTransacciones_2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>dashborad_btn_2</receiver>
+   <receiver>btnTransacciones</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1384,9 +1384,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>dashborad_btn_2</sender>
+   <sender>btnTransacciones</sender>
    <signal>toggled(bool)</signal>
-   <receiver>dashborad_btn_1</receiver>
+   <receiver>btnTransacciones_2</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">

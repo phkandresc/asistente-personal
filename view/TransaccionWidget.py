@@ -41,7 +41,14 @@ class TransaccionWidget(QWidget):
         vbox_der.addWidget(lbl_fecha)
 
         lbl_monto = QLabel(f"${monto:,.2f}")
-        color_monto = "green" if monto >= 0 else "red"
+        # Determinar color según tipo de transacción
+        nombre_clase = type(transaccion).__name__.lower()
+        if nombre_clase == "ingreso":
+            color_monto = "green"
+        elif nombre_clase == "egreso":
+            color_monto = "red"
+        else:
+            color_monto = "black"
         lbl_monto.setStyleSheet(f"color: {color_monto}; font-weight: bold; font-size: 12pt;")
         lbl_monto.setAlignment(Qt.AlignmentFlag.AlignRight)
         vbox_der.addWidget(lbl_monto)

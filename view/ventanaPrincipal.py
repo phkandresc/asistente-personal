@@ -7,7 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from . import resource_rc
+from . import resource_rc  # Importa los recursos generados por PyQt6
 
 class Ui_ventanaPrincipal(object):
     def setupUi(self, ventanaPrincipal):
@@ -91,7 +91,11 @@ class Ui_ventanaPrincipal(object):
 "}\n"
 "\n"
 "#barraSuperior {\n"
-"    background-color: rgb(234, 228, 213);\n"
+"    background-color: #EAEFEF;\n"
+"}\n"
+"\n"
+"#pilaWidgets {\n"
+"    background-color: rgb(255, 255, 255);\n"
 "}\n"
 "")
         self.centralwidget = QtWidgets.QWidget(parent=ventanaPrincipal)
@@ -312,7 +316,7 @@ class Ui_ventanaPrincipal(object):
         self.lblBalanceGeneral_3.setObjectName("lblBalanceGeneral_3")
         self.verticalLayout_8.addWidget(self.lblBalanceGeneral_3)
         self.widgetGraficoIngresos = QtWidgets.QWidget(parent=self.paginaResumen)
-        self.widgetGraficoIngresos.setMinimumSize(QtCore.QSize(300, 250))
+        self.widgetGraficoIngresos.setMinimumSize(QtCore.QSize(450, 250))
         self.widgetGraficoIngresos.setMaximumSize(QtCore.QSize(300, 250))
         self.widgetGraficoIngresos.setObjectName("widgetGraficoIngresos")
         self.verticalLayout_8.addWidget(self.widgetGraficoIngresos)
@@ -330,8 +334,8 @@ class Ui_ventanaPrincipal(object):
         self.lblBalanceGeneral_4.setObjectName("lblBalanceGeneral_4")
         self.verticalLayout_15.addWidget(self.lblBalanceGeneral_4)
         self.widgetGraficoEgresos = QtWidgets.QWidget(parent=self.paginaResumen)
-        self.widgetGraficoEgresos.setMinimumSize(QtCore.QSize(300, 250))
-        self.widgetGraficoEgresos.setMaximumSize(QtCore.QSize(300, 250))
+        self.widgetGraficoEgresos.setMinimumSize(QtCore.QSize(450, 250))
+        self.widgetGraficoEgresos.setMaximumSize(QtCore.QSize(400, 250))
         self.widgetGraficoEgresos.setObjectName("widgetGraficoEgresos")
         self.verticalLayout_15.addWidget(self.widgetGraficoEgresos)
         self.formLayout.setLayout(2, QtWidgets.QFormLayout.ItemRole.LabelRole, self.verticalLayout_15)

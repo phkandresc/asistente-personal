@@ -2,29 +2,29 @@
   {
       "id": 1,
       "nombre": "Alquiler"
-    },
-    {
-      "id": 2,
-      "nombre": "Comida"
-    },
-    {
-      "id": 3,
-      "nombre": "Transporte"
-    },
-    {
-        "id": 4,
-        "nombre": "Servicios"
-    },
-    {
-        "id": 5,
-        "nombre": "Entretenimiento"
-    },
-    {
-        "id": 6,
-        "nombre": "Salud"
-    },
-    {
-        "id": 7,
-        "nombre": "Educación"
-    }
+  },
+  {
+    "id": 2,
+    "nombre": "Comida"
+  },
+  {
+    "id": 3,
+    "nombre": "Transporte"
+  },
+  {
+      "id": 4,
+      "nombre": "Servicios"
+  },
+  {
+      "id": 5,
+      "nombre": "Entretenimiento"
+  },
+  {
+      "id": 6,
+      "nombre": "Salud"
+  },
+  {
+      "id": 7,
+      "nombre": "Educación"
+  }
 ]
