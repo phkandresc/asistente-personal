@@ -66,3 +66,28 @@ class TransaccionRepository:
         transacciones = self.cargar_transacciones(username, tipo)
         transacciones.append(transaccion)
         self.guardar_transacciones(username, tipo, transacciones)
+
+    def egresos_por_dia(self, username: str) -> dict:
+        """
+        Retorna un diccionario {fecha: total_egresos} para el calendario financiero.
+        """
+        from collections import defaultdict
+
+        egresos = self.cargar_transacciones(username, "egresos")
+        gastos_por_fecha = defaultdict(float)
+
+        for e in egresos:
+            fecha = getattr(e, 'fecha', None)
+            monto = getattr(e, 'monto', 0)
+            if fecha:
+                gastos_por_fecha[fecha] += monto
+
+        return dict(gastos_por_fecha)
+
+    def cargar_transacciones_por_dia(self, username: str, tipo: str, fecha: str) -> list:
+        """
+        Carga y retorna la lista de transacciones del tipo dado (ingresos/egresos)
+        para el usuario especificado, filtrando solo las que coinciden con la fecha dada (YYYY-MM-DD).
+        """
+        transacciones = self.cargar_transacciones(username, tipo)
+        return [t for t in transacciones if getattr(t, 'fecha', None) == fecha]

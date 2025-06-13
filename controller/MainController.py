@@ -2,6 +2,7 @@ from PyQt6 import QtWidgets
 from PyQt6.QtWidgets import QPushButton, QMainWindow, QListWidgetItem
 
 from model.UserRepository import UserRepository
+from view.CalendarioFinanciero import CalendarioFinanciero
 from view.TransaccionWidget import TransaccionWidget
 from view.ventanaPrincipal import Ui_ventanaPrincipal
 from model.TransaccionRepository import TransaccionRepository
@@ -18,15 +19,16 @@ class MainController:
         self.ui.pilaWidgets.setCurrentIndex(0)
         self.ui.btnResumen.setChecked(True)
         self.ui.btnResumen.toggled.connect(lambda: self.cambiar_pagina(0))
+        self.ui.btnTransacciones.toggled.connect(lambda: self.cambiar_pagina(1))
         self.usuario = usuario
-        print(type(usuario))
         self.ui.lblUsername.setText(f"Bienvenido, {self.usuario.nombre} {self.usuario.apellido}")
-        self._init_pie_charts()
+        self.inicializar_pie_charts()
         self.cargar_resumen_financiero()
         self.cargar_ultimas_transacciones()
         self.cargar_graficos_categorias()
+        self.configurar_calendario_financiero()  # Asegura que el calendario se configure al iniciar
 
-    def _init_pie_charts(self):
+    def inicializar_pie_charts(self):
         """Inicializa y agrega los widgets de gráficos de pastel a los layouts correspondientes."""
         self.pie_ingresos = PieChartWidget()
         self.pie_egresos = PieChartWidget()
@@ -54,15 +56,16 @@ class MainController:
     def cargar_ingresos(self):
         repo = TransaccionRepository()
         ingresos = repo.cargar_transacciones(self.usuario.username, "ingresos")
-        print(f"Transacciones cargadas: {len(ingresos)}")
-        self.ui.listTransacciones.clear()
+        self.agregar_transacciones_a_lista(ingresos, self.ui.listTransacciones)
 
-        for ingreso in ingresos:
-            item = QListWidgetItem(self.ui.listTransacciones)
-            widget = TransaccionWidget(ingreso)
+    def agregar_transacciones_a_lista(self, transacciones, list_widget):
+        list_widget.clear()
+        for transaccion in transacciones:
+            item = QListWidgetItem(list_widget)
+            widget = TransaccionWidget(transaccion)
             item.setSizeHint(widget.sizeHint())
-            self.ui.listTransacciones.addItem(item)
-            self.ui.listTransacciones.setItemWidget(item, widget)
+            list_widget.addItem(item)
+            list_widget.setItemWidget(item, widget)
 
     def cargar_ultimas_transacciones(self):
         repo = TransaccionRepository()
@@ -72,13 +75,7 @@ class MainController:
         # Ordenar por fecha descendente (asumiendo formato 'YYYY-MM-DD')
         todas.sort(key=lambda t: t.fecha, reverse=True)
         ultimas = todas[:5]
-        self.ui.listTransacciones.clear()
-        for transaccion in ultimas:
-            item = QListWidgetItem(self.ui.listTransacciones)
-            widget = TransaccionWidget(transaccion)
-            item.setSizeHint(widget.sizeHint())
-            self.ui.listTransacciones.addItem(item)
-            self.ui.listTransacciones.setItemWidget(item, widget)
+        self.agregar_transacciones_a_lista(ultimas, self.ui.listTransacciones)
 
     def cargar_graficos_categorias(self):
         repo = TransaccionRepository()
@@ -119,6 +116,35 @@ class MainController:
             else:
                 btn.setAutoExclusive(True)
 
+    def configurar_calendario_financiero(self):
+        repo = TransaccionRepository()
+
+        gastos_por_fecha = repo.egresos_por_dia(self.usuario.username)
+
+        self.calendario_financiero = CalendarioFinanciero(gastos_por_fecha)
+        self.calendario_financiero.selectionChanged.connect(self.mostrar_transacciones_del_dia)
+
+        # Limpiar el layout donde va el calendario
+        layout = self.ui.widgetCalendario.layout() or QtWidgets.QVBoxLayout(self.ui.widgetCalendario)
+        while layout.count():
+            item = layout.takeAt(0)
+            if item.widget():
+                item.widget().deleteLater()
+        layout.addWidget(self.calendario_financiero)
+
+    def mostrar_transacciones_del_dia(self):
+        from model.TransaccionRepository import TransaccionRepository
+        repo = TransaccionRepository()
+
+        qdate = self.calendario_financiero.selectedDate()
+        fecha_str = qdate.toString("yyyy-MM-dd")
+
+        ingresos = repo.cargar_transacciones_por_dia(self.usuario.username, "ingresos", fecha_str)
+        egresos = repo.cargar_transacciones_por_dia(self.usuario.username, "egresos", fecha_str)
+        transacciones = ingresos + egresos
+        transacciones.sort(key=lambda t: t.id, reverse=True)
+
+        self.agregar_transacciones_a_lista(transacciones, self.ui.listTransaccionesPorDia)
 
 if __name__ == "__main__":
     import sys
