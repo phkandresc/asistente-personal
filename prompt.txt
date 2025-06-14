@@ -1,0 +1,86 @@
+Quiero que crees datos para un usuario de una aplicacion de gestion financiera personal.
+El usuario es un estudiante ecuatoriano de 20 años que vive en Quito, Ecuador.
+El usuario tiene un ingreso mensual de $1000 y gasta aproximadamente $800 al mes en diferentes categorias de egresos.
+
+Las categorias de ingresos en formato JSON son:
+[
+  {
+      "id": 1,
+      "nombre": "Salario"
+  },
+  {
+    "id": 2,
+    "nombre": "Inversiones"
+  },
+  {
+    "id": 3,
+    "nombre": "Dinero extra"
+  }
+]
+Las categorias de egresos en formato JSON son:
+[
+  {
+      "id": 1,
+      "nombre": "Alquiler"
+  },
+  {
+    "id": 2,
+    "nombre": "Comida"
+  },
+  {
+    "id": 3,
+    "nombre": "Transporte"
+  },
+  {
+      "id": 4,
+      "nombre": "Servicios"
+  },
+  {
+      "id": 5,
+      "nombre": "Entretenimiento"
+  },
+  {
+      "id": 6,
+      "nombre": "Salud"
+  },
+  {
+      "id": 7,
+      "nombre": "Educación"
+  }
+]
+
+Las transacciones de ingresos y egresos se deben generar con las siguientes reglas:
+- cada transaccion debe ser lo mas realista posible dentro del contexto de un usuario ecuatoriano.
+- las transacciones deben tener un formato de fecha "YYYY-MM-DD".
+- las transacciones deben ser dentro del rango de fechas entre el dia de hoy y 60 dias hacia atras.
+- cada transaccion debe guardarse en un archivo JSON llamado "ingresos.json" o "egresos.json" dependiendo de su tipo.
+- ejemplo de transaccion de ingreso:
+[
+    {
+        "id": 1,
+        "monto": 1000.0,
+        "fecha": "2023-10-01",
+        "categoria": {
+            "id": 1,
+            "nombre": "Salario"
+        },
+        "descripcion": "Pago de servicios",
+        "tipo": "ingreso"
+    }
+]
+
+- ejemplo de transaccion de egreso:
+[
+    {
+        "id": 1,
+        "monto": 200.0,
+        "fecha": "2023-10-01",
+        "categoria": {
+            "id": 2,
+            "nombre": "Comida"
+        },
+        "descripcion": "Compra mensual de víveres",
+        "tipo": "egreso"
+    }
+]
+

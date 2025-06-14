@@ -1,24 +1,145 @@
 [
-  {
+    {
         "id": 1,
-        "monto": 500.0,
-        "fecha": "2023-10-01",
+        "monto": 300.0,
+        "fecha": "2025-05-20",
         "categoria": {
             "id": 1,
             "nombre": "Alquiler"
         },
-        "descripcion": "Pago de alquiler de la vivienda",
+        "descripcion": "Pago de alquiler de habitación",
         "tipo": "egreso"
     },
     {
         "id": 2,
-        "monto": 10.0,
-        "fecha": "2023-10-01",
+        "monto": 180.0,
+        "fecha": "2025-05-31",
         "categoria": {
             "id": 2,
             "nombre": "Comida"
         },
-        "descripcion": "Comida rapida de Burger King",
+        "descripcion": "Compras de víveres y snacks",
+        "tipo": "egreso"
+    },
+    {
+        "id": 3,
+        "monto": 60.0,
+        "fecha": "2025-05-29",
+        "categoria": {
+            "id": 3,
+            "nombre": "Transporte"
+        },
+        "descripcion": "Recargas y transporte público",
+        "tipo": "egreso"
+    },
+    {
+        "id": 4,
+        "monto": 80.0,
+        "fecha": "2025-05-30",
+        "categoria": {
+            "id": 4,
+            "nombre": "Servicios"
+        },
+        "descripcion": "Luz, agua, internet",
+        "tipo": "egreso"
+    },
+    {
+        "id": 5,
+        "monto": 70.0,
+        "fecha": "2025-05-30",
+        "categoria": {
+            "id": 5,
+            "nombre": "Entretenimiento"
+        },
+        "descripcion": "Cine, salidas con amigos",
+        "tipo": "egreso"
+    },
+    {
+        "id": 6,
+        "monto": 50.0,
+        "fecha": "2025-06-01",
+        "categoria": {
+            "id": 6,
+            "nombre": "Salud"
+        },
+        "descripcion": "Medicamentos y consulta médica",
+        "tipo": "egreso"
+    },
+    {
+        "id": 7,
+        "monto": 60.0,
+        "fecha": "2025-05-30",
+        "categoria": {
+            "id": 7,
+            "nombre": "Educación"
+        },
+        "descripcion": "Libros y materiales universitarios",
+        "tipo": "egreso"
+    },
+    {
+        "id": 8,
+        "monto": 25.0,
+        "fecha": "2025-05-10",
+        "categoria": {
+            "id": 2,
+            "nombre": "Comida"
+        },
+        "descripcion": "Café y snacks en la universidad",
+        "tipo": "egreso"
+    },
+    {
+        "id": 9,
+        "monto": 10.0,
+        "fecha": "2025-05-10",
+        "categoria": {
+            "id": 3,
+            "nombre": "Transporte"
+        },
+        "descripcion": "Uber ocasional",
+        "tipo": "egreso"
+    },
+    {
+        "id": 10,
+        "monto": 20.0,
+        "fecha": "2025-04-21",
+        "categoria": {
+            "id": 5,
+            "nombre": "Entretenimiento"
+        },
+        "descripcion": "Netflix y Spotify",
+        "tipo": "egreso"
+    },
+    {
+        "id": 11,
+        "monto": 22.0,
+        "fecha": "2025-06-07",
+        "categoria": {
+            "id": 6,
+            "nombre": "Salud"
+        },
+        "descripcion": "Vitaminas y suplementos",
+        "tipo": "egreso"
+    },
+    {
+        "id": 12,
+        "monto": 30.0,
+        "fecha": "2025-06-06",
+        "categoria": {
+            "id": 7,
+            "nombre": "Educación"
+        },
+        "descripcion": "Fotocopias y tareas impresas",
+        "tipo": "egreso"
+    },
+    {
+        "id": 13,
+        "monto": 4.5,
+        "fecha": "2025-06-14",
+        "categoria": {
+            "id": 3,
+            "nombre": "Transporte"
+        },
+        "descripcion": "fsdg",
         "tipo": "egreso"
     }
 ]

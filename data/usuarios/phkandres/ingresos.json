@@ -1,35 +1,57 @@
 [
     {
         "id": 1,
-        "monto": 1000.0,
-        "fecha": "2023-10-01",
+        "monto": 25.0,
+        "fecha": "2025-06-14",
         "categoria": {
-            "id": 1,
-            "nombre": "Salario"
+            "id": 3,
+            "nombre": "Dinero extra"
         },
-        "descripcion": "Pago de servicios",
+        "descripcion": "platilla",
         "tipo": "ingreso"
     },
     {
         "id": 2,
-        "monto": 1000.0,
-        "fecha": "2023-10-01",
+        "monto": 600.0,
+        "fecha": "2025-05-08",
         "categoria": {
             "id": 1,
             "nombre": "Salario"
         },
-        "descripcion": "Pago de servicios",
+        "descripcion": "Pago mensual por trabajo a medio tiempo",
         "tipo": "ingreso"
     },
     {
         "id": 3,
-        "monto": 1000.0,
-        "fecha": "2023-10-01",
+        "monto": 50.0,
+        "fecha": "2025-05-15",
         "categoria": {
-            "id": 1,
-            "nombre": "Salario"
+            "id": 2,
+            "nombre": "Inversiones"
         },
-        "descripcion": "Pago de servicios",
+        "descripcion": "Rendimiento de ahorro en cooperativa",
+        "tipo": "ingreso"
+    },
+    {
+        "id": 4,
+        "monto": 70.0,
+        "fecha": "2025-04-16",
+        "categoria": {
+            "id": 3,
+            "nombre": "Dinero extra"
+        },
+        "descripcion": "Venta de ropa usada",
+        "tipo": "ingreso"
+    },
+    {
+        "id": 5,
+        "monto": 100.0,
+        "fecha": "2025-06-14",
+        "categoria": {
+            "id": 3,
+            "nombre": "Dinero extra"
+        },
+        "descripcion": "lll",
         "tipo": "ingreso"
     }
 ]
