@@ -1,0 +1,62 @@
+{
+    "fecha_inicio": "2025-06-01",
+    "fecha_fin": "2025-06-30",
+    "presupuestos": [
+        {
+            "categoria": {
+                "id": 1,
+                "nombre": "Alquiler"
+            },
+            "monto_guardado": 0,
+            "monto_objetivo": 100.0
+        },
+        {
+            "categoria": {
+                "id": 2,
+                "nombre": "Comida"
+            },
+            "monto_guardado": 0,
+            "monto_objetivo": 99.0
+        },
+        {
+            "categoria": {
+                "id": 3,
+                "nombre": "Transporte"
+            },
+            "monto_guardado": 4.5,
+            "monto_objetivo": 100.0
+        },
+        {
+            "categoria": {
+                "id": 4,
+                "nombre": "Servicios"
+            },
+            "monto_guardado": 0,
+            "monto_objetivo": 100.0
+        },
+        {
+            "categoria": {
+                "id": 5,
+                "nombre": "Entretenimiento"
+            },
+            "monto_guardado": 0,
+            "monto_objetivo": 100.0
+        },
+        {
+            "categoria": {
+                "id": 6,
+                "nombre": "Salud"
+            },
+            "monto_guardado": 72.0,
+            "monto_objetivo": 100.0
+        },
+        {
+            "categoria": {
+                "id": 7,
+                "nombre": "Educación"
+            },
+            "monto_guardado": 30.0,
+            "monto_objetivo": 70.0
+        }
+    ]
+}

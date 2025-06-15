@@ -55,3 +55,13 @@ class CategoriaRepository:
                 return json.load(f)
         else:
             return []
+
+    def obtener_categoria_por_nombre(self, categoria_nombre):
+        """
+        Busca una categoría por su nombre en las categorías de ingresos y egresos.
+        Retorna la categoría encontrada o None si no existe.
+        """
+        for categoria in self.categorias_ingresos + self.categorias_egresos:
+            if categoria.nombre == categoria_nombre:
+                return categoria
+        return None

@@ -99,8 +99,6 @@
 	background-color: rgb(255, 255, 255);
 }
 
-#btnAgregarTransaccion{
-}
 
 #btnAgregarTransaccion {
 	background-color: rgb(80, 99, 191);
@@ -115,7 +113,20 @@
 	background-color: rgb(65, 84, 176);
 	border: 2px solid rgb(65, 84, 176);
 }
-</string>
+
+#btnNuevoPresupuesto {
+	background-color: rgb(80, 99, 191);
+	color: rgb(255, 255, 255);
+	border: 2px solid rgb(80, 99, 191);
+	border-radius: 5px;
+	padding: 6px;
+}
+
+#btnNuevoPresupuesto:hover,
+#btnNuevoPresupuesto:clicked{
+	background-color: rgb(65, 84, 176);
+	border: 2px solid rgb(65, 84, 176);
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -235,9 +246,9 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="orders_btn_2">
+          <widget class="QPushButton" name="btnPresupuesto">
            <property name="text">
-            <string>Orders</string>
+            <string>Presupuesto</string>
            </property>
            <property name="icon">
             <iconset resource="resource.qrc">
@@ -473,7 +484,7 @@
           <string notr="true"/>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="paginaResumen">
           <property name="styleSheet">
@@ -789,7 +800,7 @@
                   <widget class="QListWidget" name="listTransacciones">
                    <property name="minimumSize">
                     <size>
-                     <width>417</width>
+                     <width>500</width>
                      <height>269</height>
                     </size>
                    </property>
@@ -843,7 +854,7 @@
                   <widget class="QWidget" name="widgetGraficoIngresos" native="true">
                    <property name="minimumSize">
                     <size>
-                     <width>450</width>
+                     <width>500</width>
                      <height>250</height>
                     </size>
                    </property>
@@ -893,7 +904,7 @@
                   <widget class="QWidget" name="widgetGraficoEgresos" native="true">
                    <property name="minimumSize">
                     <size>
-                     <width>450</width>
+                     <width>500</width>
                      <height>250</height>
                     </size>
                    </property>
@@ -1004,7 +1015,7 @@
                   <widget class="QListWidget" name="listTransaccionesPorDia">
                    <property name="minimumSize">
                     <size>
-                     <width>450</width>
+                     <width>500</width>
                      <height>300</height>
                     </size>
                    </property>
@@ -1077,22 +1088,155 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="page_3">
+         <widget class="QWidget" name="paginaPresupuesto">
           <layout class="QGridLayout" name="gridLayout_4">
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_6">
-             <property name="font">
-              <font>
-               <pointsize>20</pointsize>
-              </font>
+           <item row="0" column="1">
+            <spacer name="verticalSpacer_12">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
              </property>
-             <property name="text">
-              <string>Orders Page</string>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>37</height>
+              </size>
              </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
+            </spacer>
+           </item>
+           <item row="1" column="0">
+            <spacer name="horizontalSpacer_9">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
-            </widget>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>191</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="1">
+            <layout class="QVBoxLayout" name="verticalLayout_22">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_21">
+               <item>
+                <widget class="QLabel" name="label">
+                 <property name="font">
+                  <font>
+                   <pointsize>12</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Presupuesto</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QDateEdit" name="datePresupuesto">
+                 <property name="font">
+                  <font>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
+                 <property name="displayFormat">
+                  <string>MMMM yyyy</string>
+                 </property>
+                 <property name="calendarPopup">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_11">
+               <property name="orientation">
+                <enum>Qt::Orientation::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_20">
+               <item>
+                <widget class="QTableWidget" name="tablaPresupuestoMensual">
+                 <property name="minimumSize">
+                  <size>
+                   <width>670</width>
+                   <height>400</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_10">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="btnNuevoPresupuesto">
+                 <property name="font">
+                  <font>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Agregar nuevo presupuesto</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="2">
+            <spacer name="horizontalSpacer_8">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>191</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="2" column="1">
+            <spacer name="verticalSpacer_13">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>37</height>
+              </size>
+             </property>
+            </spacer>
            </item>
           </layout>
          </widget>
@@ -1278,7 +1422,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="orders_btn_1">
+          <widget class="QPushButton" name="btnPresupuesto_2">
            <property name="text">
             <string/>
            </property>
@@ -1456,9 +1600,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>orders_btn_1</sender>
+   <sender>btnPresupuesto_2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>orders_btn_2</receiver>
+   <receiver>btnPresupuesto</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1536,9 +1680,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>orders_btn_2</sender>
+   <sender>btnPresupuesto</sender>
    <signal>toggled(bool)</signal>
-   <receiver>orders_btn_1</receiver>
+   <receiver>btnPresupuesto_2</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">

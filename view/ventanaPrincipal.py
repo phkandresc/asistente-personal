@@ -98,8 +98,6 @@ class Ui_ventanaPrincipal(object):
 "    background-color: rgb(255, 255, 255);\n"
 "}\n"
 "\n"
-"#btnAgregarTransaccion{\n"
-"}\n"
 "\n"
 "#btnAgregarTransaccion {\n"
 "    background-color: rgb(80, 99, 191);\n"
@@ -114,7 +112,20 @@ class Ui_ventanaPrincipal(object):
 "    background-color: rgb(65, 84, 176);\n"
 "    border: 2px solid rgb(65, 84, 176);\n"
 "}\n"
-"")
+"\n"
+"#btnNuevoPresupuesto {\n"
+"    background-color: rgb(80, 99, 191);\n"
+"    color: rgb(255, 255, 255);\n"
+"    border: 2px solid rgb(80, 99, 191);\n"
+"    border-radius: 5px;\n"
+"    padding: 6px;\n"
+"}\n"
+"\n"
+"#btnNuevoPresupuesto:hover,\n"
+"#btnNuevoPresupuesto:clicked{\n"
+"    background-color: rgb(65, 84, 176);\n"
+"    border: 2px solid rgb(65, 84, 176);\n"
+"}")
         self.centralwidget = QtWidgets.QWidget(parent=ventanaPrincipal)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
@@ -166,16 +177,16 @@ class Ui_ventanaPrincipal(object):
         self.btnTransacciones.setAutoExclusive(True)
         self.btnTransacciones.setObjectName("btnTransacciones")
         self.verticalLayout_2.addWidget(self.btnTransacciones)
-        self.orders_btn_2 = QtWidgets.QPushButton(parent=self.widgetMenu)
+        self.btnPresupuesto = QtWidgets.QPushButton(parent=self.widgetMenu)
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap(":/icon/icon/activity-feed-32.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         icon2.addPixmap(QtGui.QPixmap(":/icon/icon/activity-feed-48.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
-        self.orders_btn_2.setIcon(icon2)
-        self.orders_btn_2.setIconSize(QtCore.QSize(14, 14))
-        self.orders_btn_2.setCheckable(True)
-        self.orders_btn_2.setAutoExclusive(True)
-        self.orders_btn_2.setObjectName("orders_btn_2")
-        self.verticalLayout_2.addWidget(self.orders_btn_2)
+        self.btnPresupuesto.setIcon(icon2)
+        self.btnPresupuesto.setIconSize(QtCore.QSize(14, 14))
+        self.btnPresupuesto.setCheckable(True)
+        self.btnPresupuesto.setAutoExclusive(True)
+        self.btnPresupuesto.setObjectName("btnPresupuesto")
+        self.verticalLayout_2.addWidget(self.btnPresupuesto)
         self.products_btn_2 = QtWidgets.QPushButton(parent=self.widgetMenu)
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap(":/icon/icon/product-32.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -398,7 +409,7 @@ class Ui_ventanaPrincipal(object):
         self.lblBalanceGeneral_2.setObjectName("lblBalanceGeneral_2")
         self.verticalLayout_14.addWidget(self.lblBalanceGeneral_2)
         self.listTransacciones = QtWidgets.QListWidget(parent=self.paginaResumen)
-        self.listTransacciones.setMinimumSize(QtCore.QSize(417, 269))
+        self.listTransacciones.setMinimumSize(QtCore.QSize(500, 269))
         self.listTransacciones.setMaximumSize(QtCore.QSize(417, 269))
         self.listTransacciones.setObjectName("listTransacciones")
         self.verticalLayout_14.addWidget(self.listTransacciones)
@@ -419,7 +430,7 @@ class Ui_ventanaPrincipal(object):
         self.lblBalanceGeneral_3.setObjectName("lblBalanceGeneral_3")
         self.verticalLayout_8.addWidget(self.lblBalanceGeneral_3)
         self.widgetGraficoIngresos = QtWidgets.QWidget(parent=self.paginaResumen)
-        self.widgetGraficoIngresos.setMinimumSize(QtCore.QSize(450, 250))
+        self.widgetGraficoIngresos.setMinimumSize(QtCore.QSize(500, 250))
         self.widgetGraficoIngresos.setMaximumSize(QtCore.QSize(300, 250))
         self.widgetGraficoIngresos.setObjectName("widgetGraficoIngresos")
         self.verticalLayout_8.addWidget(self.widgetGraficoIngresos)
@@ -437,7 +448,7 @@ class Ui_ventanaPrincipal(object):
         self.lblBalanceGeneral_4.setObjectName("lblBalanceGeneral_4")
         self.verticalLayout_15.addWidget(self.lblBalanceGeneral_4)
         self.widgetGraficoEgresos = QtWidgets.QWidget(parent=self.paginaResumen)
-        self.widgetGraficoEgresos.setMinimumSize(QtCore.QSize(450, 250))
+        self.widgetGraficoEgresos.setMinimumSize(QtCore.QSize(500, 250))
         self.widgetGraficoEgresos.setMaximumSize(QtCore.QSize(400, 250))
         self.widgetGraficoEgresos.setObjectName("widgetGraficoEgresos")
         self.verticalLayout_15.addWidget(self.widgetGraficoEgresos)
@@ -476,7 +487,7 @@ class Ui_ventanaPrincipal(object):
         self.lblBalanceGeneral_5.setObjectName("lblBalanceGeneral_5")
         self.verticalLayout_18.addWidget(self.lblBalanceGeneral_5)
         self.listTransaccionesPorDia = QtWidgets.QListWidget(parent=self.paginaTransacciones)
-        self.listTransaccionesPorDia.setMinimumSize(QtCore.QSize(450, 300))
+        self.listTransaccionesPorDia.setMinimumSize(QtCore.QSize(500, 300))
         self.listTransaccionesPorDia.setMaximumSize(QtCore.QSize(417, 269))
         self.listTransaccionesPorDia.setObjectName("listTransaccionesPorDia")
         self.verticalLayout_18.addWidget(self.listTransaccionesPorDia)
@@ -498,18 +509,62 @@ class Ui_ventanaPrincipal(object):
         spacerItem14 = QtWidgets.QSpacerItem(20, 86, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.gridLayout_3.addItem(spacerItem14, 2, 1, 1, 1)
         self.pilaWidgets.addWidget(self.paginaTransacciones)
-        self.page_3 = QtWidgets.QWidget()
-        self.page_3.setObjectName("page_3")
-        self.gridLayout_4 = QtWidgets.QGridLayout(self.page_3)
+        self.paginaPresupuesto = QtWidgets.QWidget()
+        self.paginaPresupuesto.setObjectName("paginaPresupuesto")
+        self.gridLayout_4 = QtWidgets.QGridLayout(self.paginaPresupuesto)
         self.gridLayout_4.setObjectName("gridLayout_4")
-        self.label_6 = QtWidgets.QLabel(parent=self.page_3)
+        spacerItem15 = QtWidgets.QSpacerItem(20, 37, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.gridLayout_4.addItem(spacerItem15, 0, 1, 1, 1)
+        spacerItem16 = QtWidgets.QSpacerItem(191, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_4.addItem(spacerItem16, 1, 0, 1, 1)
+        self.verticalLayout_22 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_22.setObjectName("verticalLayout_22")
+        self.verticalLayout_21 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_21.setObjectName("verticalLayout_21")
+        self.label = QtWidgets.QLabel(parent=self.paginaPresupuesto)
         font = QtGui.QFont()
-        font.setPointSize(20)
-        self.label_6.setFont(font)
-        self.label_6.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_6.setObjectName("label_6")
-        self.gridLayout_4.addWidget(self.label_6, 0, 0, 1, 1)
-        self.pilaWidgets.addWidget(self.page_3)
+        font.setPointSize(12)
+        font.setBold(True)
+        self.label.setFont(font)
+        self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label.setObjectName("label")
+        self.verticalLayout_21.addWidget(self.label)
+        self.datePresupuesto = QtWidgets.QDateEdit(parent=self.paginaPresupuesto)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.datePresupuesto.setFont(font)
+        self.datePresupuesto.setCalendarPopup(True)
+        self.datePresupuesto.setObjectName("datePresupuesto")
+        self.verticalLayout_21.addWidget(self.datePresupuesto)
+        self.verticalLayout_22.addLayout(self.verticalLayout_21)
+        spacerItem17 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_22.addItem(spacerItem17)
+        self.verticalLayout_20 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_20.setObjectName("verticalLayout_20")
+        self.tablaPresupuestoMensual = QtWidgets.QTableWidget(parent=self.paginaPresupuesto)
+        self.tablaPresupuestoMensual.setMinimumSize(QtCore.QSize(670, 400))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.tablaPresupuestoMensual.setFont(font)
+        self.tablaPresupuestoMensual.setObjectName("tablaPresupuestoMensual")
+        self.tablaPresupuestoMensual.setColumnCount(0)
+        self.tablaPresupuestoMensual.setRowCount(0)
+        self.verticalLayout_20.addWidget(self.tablaPresupuestoMensual)
+        spacerItem18 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_20.addItem(spacerItem18)
+        self.btnNuevoPresupuesto = QtWidgets.QPushButton(parent=self.paginaPresupuesto)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.btnNuevoPresupuesto.setFont(font)
+        self.btnNuevoPresupuesto.setObjectName("btnNuevoPresupuesto")
+        self.verticalLayout_20.addWidget(self.btnNuevoPresupuesto)
+        self.verticalLayout_22.addLayout(self.verticalLayout_20)
+        self.gridLayout_4.addLayout(self.verticalLayout_22, 1, 1, 1, 1)
+        spacerItem19 = QtWidgets.QSpacerItem(191, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_4.addItem(spacerItem19, 1, 2, 1, 1)
+        spacerItem20 = QtWidgets.QSpacerItem(20, 37, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.gridLayout_4.addItem(spacerItem20, 2, 1, 1, 1)
+        self.pilaWidgets.addWidget(self.paginaPresupuesto)
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setObjectName("page_4")
         self.gridLayout_5 = QtWidgets.QGridLayout(self.page_4)
@@ -596,14 +651,14 @@ class Ui_ventanaPrincipal(object):
         self.btnTransacciones_2.setAutoExclusive(True)
         self.btnTransacciones_2.setObjectName("btnTransacciones_2")
         self.verticalLayout.addWidget(self.btnTransacciones_2)
-        self.orders_btn_1 = QtWidgets.QPushButton(parent=self.widgetMenuIconos)
-        self.orders_btn_1.setText("")
-        self.orders_btn_1.setIcon(icon2)
-        self.orders_btn_1.setIconSize(QtCore.QSize(20, 20))
-        self.orders_btn_1.setCheckable(True)
-        self.orders_btn_1.setAutoExclusive(True)
-        self.orders_btn_1.setObjectName("orders_btn_1")
-        self.verticalLayout.addWidget(self.orders_btn_1)
+        self.btnPresupuesto_2 = QtWidgets.QPushButton(parent=self.widgetMenuIconos)
+        self.btnPresupuesto_2.setText("")
+        self.btnPresupuesto_2.setIcon(icon2)
+        self.btnPresupuesto_2.setIconSize(QtCore.QSize(20, 20))
+        self.btnPresupuesto_2.setCheckable(True)
+        self.btnPresupuesto_2.setAutoExclusive(True)
+        self.btnPresupuesto_2.setObjectName("btnPresupuesto_2")
+        self.verticalLayout.addWidget(self.btnPresupuesto_2)
         self.products_btn_1 = QtWidgets.QPushButton(parent=self.widgetMenuIconos)
         self.products_btn_1.setText("")
         self.products_btn_1.setIcon(icon3)
@@ -621,8 +676,8 @@ class Ui_ventanaPrincipal(object):
         self.customers_btn_1.setObjectName("customers_btn_1")
         self.verticalLayout.addWidget(self.customers_btn_1)
         self.verticalLayout_3.addLayout(self.verticalLayout)
-        spacerItem15 = QtWidgets.QSpacerItem(20, 375, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_3.addItem(spacerItem15)
+        spacerItem21 = QtWidgets.QSpacerItem(20, 375, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_3.addItem(spacerItem21)
         self.btnSalirIcono = QtWidgets.QPushButton(parent=self.widgetMenuIconos)
         self.btnSalirIcono.setText("")
         self.btnSalirIcono.setIcon(icon5)
@@ -633,17 +688,17 @@ class Ui_ventanaPrincipal(object):
         ventanaPrincipal.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(ventanaPrincipal)
-        self.pilaWidgets.setCurrentIndex(1)
+        self.pilaWidgets.setCurrentIndex(2)
         self.btnCambioMenu.toggled['bool'].connect(self.widgetMenuIconos.setVisible) # type: ignore
         self.btnCambioMenu.toggled['bool'].connect(self.widgetMenu.setHidden) # type: ignore
         self.btnResumen_2.toggled['bool'].connect(self.btnResumen.setChecked) # type: ignore
         self.btnTransacciones_2.toggled['bool'].connect(self.btnTransacciones.setChecked) # type: ignore
-        self.orders_btn_1.toggled['bool'].connect(self.orders_btn_2.setChecked) # type: ignore
+        self.btnPresupuesto_2.toggled['bool'].connect(self.btnPresupuesto.setChecked) # type: ignore
         self.products_btn_1.toggled['bool'].connect(self.products_btn_2.setChecked) # type: ignore
         self.customers_btn_1.toggled['bool'].connect(self.customers_btn_2.setChecked) # type: ignore
         self.btnResumen.toggled['bool'].connect(self.btnResumen_2.setChecked) # type: ignore
         self.btnTransacciones.toggled['bool'].connect(self.btnTransacciones_2.setChecked) # type: ignore
-        self.orders_btn_2.toggled['bool'].connect(self.orders_btn_1.setChecked) # type: ignore
+        self.btnPresupuesto.toggled['bool'].connect(self.btnPresupuesto_2.setChecked) # type: ignore
         self.products_btn_2.toggled['bool'].connect(self.products_btn_1.setChecked) # type: ignore
         self.customers_btn_2.toggled['bool'].connect(self.customers_btn_1.setChecked) # type: ignore
         self.btnSalir.clicked.connect(ventanaPrincipal.close) # type: ignore
@@ -656,7 +711,7 @@ class Ui_ventanaPrincipal(object):
         self.lblLogoMenuGrande.setText(_translate("ventanaPrincipal", "Finanzas"))
         self.btnResumen.setText(_translate("ventanaPrincipal", "Resumen"))
         self.btnTransacciones.setText(_translate("ventanaPrincipal", "Transacciones"))
-        self.orders_btn_2.setText(_translate("ventanaPrincipal", "Orders"))
+        self.btnPresupuesto.setText(_translate("ventanaPrincipal", "Presupuesto"))
         self.products_btn_2.setText(_translate("ventanaPrincipal", "Products"))
         self.customers_btn_2.setText(_translate("ventanaPrincipal", "Customers"))
         self.btnSalir.setText(_translate("ventanaPrincipal", "Exit"))
@@ -675,7 +730,9 @@ class Ui_ventanaPrincipal(object):
         self.lblBalanceGeneral_4.setText(_translate("ventanaPrincipal", "Egresos por categoria"))
         self.lblBalanceGeneral_5.setText(_translate("ventanaPrincipal", "Transacciones recientes"))
         self.btnAgregarTransaccion.setText(_translate("ventanaPrincipal", "Agregar transaccion"))
-        self.label_6.setText(_translate("ventanaPrincipal", "Orders Page"))
+        self.label.setText(_translate("ventanaPrincipal", "Presupuesto"))
+        self.datePresupuesto.setDisplayFormat(_translate("ventanaPrincipal", "MMMM yyyy"))
+        self.btnNuevoPresupuesto.setText(_translate("ventanaPrincipal", "Agregar nuevo presupuesto"))
         self.label_7.setText(_translate("ventanaPrincipal", "Product Page"))
         self.label_8.setText(_translate("ventanaPrincipal", "Customers Page"))
         self.label_9.setText(_translate("ventanaPrincipal", "Search Page"))

@@ -83,3 +83,25 @@ class TransaccionRepository:
                 self.guardar_transacciones(username, tipo, transacciones)
                 return True
         return False
+
+    def obtener_egresos_por_usuario_y_mes(self, username, mes, anio):
+        """
+        Devuelve un diccionario con el total de egresos por cada categoría para el usuario, mes y año dados.
+        Retorna: {categoria_id: total_egresos}
+        """
+        egresos = self.cargar_transacciones(username, "egresos")
+        totales_por_categoria = {}
+        for t in egresos:
+            fecha = getattr(t, 'fecha', None)
+            if fecha:
+                try:
+                    partes = fecha.split("-")
+                    if len(partes) >= 2:
+                        anio_t, mes_t = partes[0], partes[1]
+                        if anio_t == str(anio) and mes_t == str(mes).zfill(2):
+                            cat_id = getattr(t.categoria, 'id', None)
+                            if cat_id is not None:
+                                totales_por_categoria[cat_id] = totales_por_categoria.get(cat_id, 0) + getattr(t, 'monto', 0)
+                except Exception:
+                    continue
+        return totales_por_categoria
