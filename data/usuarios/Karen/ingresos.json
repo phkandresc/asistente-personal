@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "monto": 450.0,
+        "fecha": "2025-06-15",
+        "categoria": {
+            "id": 1,
+            "nombre": "Salario"
+        },
+        "descripcion": "",
+        "tipo": "ingreso"
+    },
+    {
+        "id": 2,
+        "monto": 1000.0,
+        "fecha": "2025-06-15",
+        "categoria": {
+            "id": 3,
+            "nombre": "Dinero extra"
+        },
+        "descripcion": "venta",
+        "tipo": "ingreso"
+    }
+]

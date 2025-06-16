@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "monto": 250.0,
+        "fecha": "2025-06-15",
+        "categoria": {
+            "id": 1,
+            "nombre": "Alquiler"
+        },
+        "descripcion": "",
+        "tipo": "egreso"
+    }
+]

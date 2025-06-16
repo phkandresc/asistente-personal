@@ -1,0 +1,14 @@
+{
+    "fecha_inicio": "2025-07-01",
+    "fecha_fin": "2025-07-31",
+    "presupuestos": [
+        {
+            "categoria": {
+                "id": 6,
+                "nombre": "Salud"
+            },
+            "monto_guardado": 0.0,
+            "monto_objetivo": 28.0
+        }
+    ]
+}

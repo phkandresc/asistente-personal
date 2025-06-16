@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "monto": 200.0,
+        "fecha": "2025-06-15",
+        "categoria": {
+            "id": 1,
+            "nombre": "Alquiler"
+        },
+        "descripcion": "",
+        "tipo": "egreso"
+    },
+    {
+        "id": 2,
+        "monto": 10.0,
+        "fecha": "2025-06-01",
+        "categoria": {
+            "id": 1,
+            "nombre": "Alquiler"
+        },
+        "descripcion": "",
+        "tipo": "egreso"
+    },
+    {
+        "id": 3,
+        "monto": 5.0,
+        "fecha": "2025-06-10",
+        "categoria": {
+            "id": 2,
+            "nombre": "Comida"
+        },
+        "descripcion": "",
+        "tipo": "egreso"
+    },
+    {
+        "id": 4,
+        "monto": 20.0,
+        "fecha": "2025-06-14",
+        "categoria": {
+            "id": 5,
+            "nombre": "Entretenimiento"
+        },
+        "descripcion": "cine",
+        "tipo": "egreso"
+    },
+    {
+        "id": 5,
+        "monto": 4.0,
+        "fecha": "2025-06-14",
+        "categoria": {
+            "id": 3,
+            "nombre": "Transporte"
+        },
+        "descripcion": "",
+        "tipo": "egreso"
+    },
+    {
+        "id": 6,
+        "monto": 150.0,
+        "fecha": "2025-06-14",
+        "categoria": {
+            "id": 6,
+            "nombre": "Salud"
+        },
+        "descripcion": "",
+        "tipo": "egreso"
+    },
+    {
+        "id": 7,
+        "monto": 30.0,
+        "fecha": "2025-05-15",
+        "categoria": {
+            "id": 6,
+            "nombre": "Salud"
+        },
+        "descripcion": "",
+        "tipo": "egreso"
+    },
+    {
+        "id": 8,
+        "monto": 50.0,
+        "fecha": "2025-06-17",
+        "categoria": {
+            "id": 4,
+            "nombre": "Servicios"
+        },
+        "descripcion": "",
+        "tipo": "egreso"
+    },
+    {
+        "id": 9,
+        "monto": 27.0,
+        "fecha": "2025-06-19",
+        "categoria": {
+            "id": 5,
+            "nombre": "Entretenimiento"
+        },
+        "descripcion": "",
+        "tipo": "egreso"
+    },
+    {
+        "id": 10,
+        "monto": 35.0,
+        "fecha": "2025-06-24",
+        "categoria": {
+            "id": 6,
+            "nombre": "Salud"
+        },
+        "descripcion": "",
+        "tipo": "egreso"
+    }
+]

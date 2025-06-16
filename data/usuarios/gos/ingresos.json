@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "monto": 1200.0,
+        "fecha": "2025-06-15",
+        "categoria": {
+            "id": 1,
+            "nombre": "Salario"
+        },
+        "descripcion": "",
+        "tipo": "ingreso"
+    }
+]

@@ -1,0 +1,14 @@
+{
+    "fecha_inicio": "2025-06-01",
+    "fecha_fin": "2025-06-30",
+    "presupuestos": [
+        {
+            "categoria": {
+                "id": 1,
+                "nombre": "Alquiler"
+            },
+            "monto_guardado": 0.0,
+            "monto_objetivo": 300.0
+        }
+    ]
+}
