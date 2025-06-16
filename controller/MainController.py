@@ -1,6 +1,7 @@
 from PyQt6 import QtWidgets
 from PyQt6.QtWidgets import QPushButton, QMainWindow
 
+from controller.AnalisisController import AnalisisController
 from controller.PresupuestoController import PresupuestoController
 from controller.ResumenController import ResumenController
 from controller.TransaccionesController import TransaccionesController
@@ -23,6 +24,7 @@ class MainController:
         self.ui.btnResumen.toggled.connect(lambda: self.cambiar_pagina(0))
         self.ui.btnTransacciones.toggled.connect(lambda: self.cambiar_pagina(1))
         self.ui.btnPresupuesto.toggled.connect(lambda: self.cambiar_pagina(2))
+        self.ui.btnAnalisis.toggled.connect(lambda: self.cambiar_pagina(3))
         self.ui.lblUsername.setText(f"Bienvenido, {self.usuario.nombre} {self.usuario.apellido}")
 
         # Inicializar los controladores de cada pagina
@@ -30,6 +32,7 @@ class MainController:
         self.resumen_controller.cargar_datos()
         self.transacciones_controller = TransaccionesController(self.usuario, self.ui)
         self.presupuesto_controller = PresupuestoController(self.usuario, self.ui)
+        self.analisis_controller = AnalisisController(self.usuario, self.ui)
 
     def cambiar_pagina(self, index: int):
         self.ui.pilaWidgets.setCurrentIndex(index)
@@ -39,6 +42,8 @@ class MainController:
             self.transacciones_controller.cargar_datos()
         elif index == 2:
             self.presupuesto_controller.cargar_datos()
+        elif index == 3:
+            self.analisis_controller.cargar_datos()
 
     ## Change QPushButton Checkable status when stackedWidget index changed
     def on_stackedWidget_currentChanged(self, index):

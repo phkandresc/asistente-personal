@@ -26,6 +26,8 @@ class LoginController:
         self.ui.cbxMostrarPassword.toggled.connect(self.toggle_password_echo_mode)
         # Conecta el botón de registro con su función
         self.ui.btnRegistrarse.clicked.connect(self.abrir_registro)
+        # Accion al presionar la tecla Enter en el campo de contraseña
+        self.ui.txtPassword.returnPressed.connect(self.iniciar_sesion)
 
     def abrir_registro(self):
         # Cierra la ventana de login y abre la de registro

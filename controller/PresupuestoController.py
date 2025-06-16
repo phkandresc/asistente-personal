@@ -1,7 +1,6 @@
 from model.PresupuestoRepository import PresupuestoRepository
 from PyQt6 import QtWidgets, QtCore
 from PyQt6.QtCore import Qt
-from datetime import datetime
 from controller.DialogPresupuestoController import DialogPresupuestoController
 
 class PresupuestoController:

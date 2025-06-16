@@ -16,14 +16,14 @@
                 "nombre": "Comida"
             },
             "monto_guardado": 0,
-            "monto_objetivo": 99.0
+            "monto_objetivo": 100.0
         },
         {
             "categoria": {
                 "id": 3,
                 "nombre": "Transporte"
             },
-            "monto_guardado": 4.5,
+            "monto_guardado": 5.0,
             "monto_objetivo": 100.0
         },
         {
@@ -56,7 +56,7 @@
                 "nombre": "Educación"
             },
             "monto_guardado": 30.0,
-            "monto_objetivo": 70.0
+            "monto_objetivo": 100.0
         }
     ]
 }

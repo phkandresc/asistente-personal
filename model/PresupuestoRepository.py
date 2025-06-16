@@ -63,3 +63,13 @@ class PresupuestoRepository:
             self.guardar_presupuesto_mensual(username, mes, anio, presupuesto)
         except FileNotFoundError:
             raise FileNotFoundError(f"No existe el presupuesto para {username} en {mes}/{anio}")
+
+    def obtener_presupuestos_usuario(self, username, mes, anio):
+        """
+        Obtiene todos los presupuestos mensuales del usuario para un mes y año específicos.
+        Si no existe un presupuesto, devuelve una lista vacía.
+        """
+        try:
+            return self.cargar_presupuesto_mensual(username, mes, anio).presupuestos
+        except FileNotFoundError:
+            return []

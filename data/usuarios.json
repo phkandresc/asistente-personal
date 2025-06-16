@@ -26,5 +26,19 @@
         "username": "karen",
         "email": "Kcoraizacav1@gmail.com",
         "password": "c8945b6d6a8bf50aa64d7d9016f8b9709919b68a2dc0c50ee2e4471f5a3dceb0"
+    },
+    {
+        "nombre": "Karen",
+        "apellido": "Coraizaca",
+        "username": "Karen",
+        "email": "kcoraizacav1@gmail.com",
+        "password": "0c51b76e255364b54c220af48d77cb77072f3adc7ffa05c454e67fdd3510446d"
+    },
+    {
+        "nombre": "Jhonatan",
+        "apellido": "Gallegos",
+        "username": "gos",
+        "email": "gos@gos.com",
+        "password": "33887d5bd536cadf66344d4984fc4bfa48ae837705348edd71eed92e151c802a"
     }
 ]

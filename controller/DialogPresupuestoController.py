@@ -70,7 +70,13 @@ class DialogPresupuestoController(QObject):
             mensual = self.repo_presupuesto.cargar_presupuesto_mensual(self.usuario.username, self.mes, self.anio)
         except Exception:
             from model.Presupuesto import PresupuestoMensual
-            mensual = PresupuestoMensual(presupuestos=[])
+            from calendar import monthrange
+            anio = int(self.anio)
+            mes = int(self.mes)
+            fecha_inicio = f"{anio}-{mes:02d}-01"
+            ultimo_dia = monthrange(anio, mes)[1]
+            fecha_fin = f"{anio}-{mes:02d}-{ultimo_dia}"
+            mensual = PresupuestoMensual(fecha_inicio=fecha_inicio, fecha_fin=fecha_fin, presupuestos=[])
         # Verificar si ya existe presupuesto para la categoría
         idx = next((i for i, p in enumerate(mensual.presupuestos) if p.categoria.id == categoria.id), None)
         if idx is not None:
